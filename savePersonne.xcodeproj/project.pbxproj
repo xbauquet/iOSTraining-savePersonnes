@@ -13,6 +13,10 @@
 		252EA3521C5904710016D5EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 252EA3501C5904710016D5EC /* Main.storyboard */; };
 		252EA3541C5904710016D5EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 252EA3531C5904710016D5EC /* Assets.xcassets */; };
 		252EA3571C5904710016D5EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 252EA3551C5904710016D5EC /* LaunchScreen.storyboard */; };
+		252EA3601C5904AD0016D5EC /* Personne.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EA35F1C5904AD0016D5EC /* Personne.m */; };
+		252EA3631C5904BC0016D5EC /* Etudiant.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EA3621C5904BC0016D5EC /* Etudiant.m */; };
+		252EA3661C5904D80016D5EC /* Formateur.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EA3651C5904D80016D5EC /* Formateur.m */; };
+		252EA3691C5910490016D5EC /* Classe.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EA3681C5910490016D5EC /* Classe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		252EA3531C5904710016D5EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		252EA3561C5904710016D5EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		252EA3581C5904710016D5EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		252EA35E1C5904AD0016D5EC /* Personne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Personne.h; sourceTree = "<group>"; };
+		252EA35F1C5904AD0016D5EC /* Personne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Personne.m; sourceTree = "<group>"; };
+		252EA3611C5904BC0016D5EC /* Etudiant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Etudiant.h; sourceTree = "<group>"; };
+		252EA3621C5904BC0016D5EC /* Etudiant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Etudiant.m; sourceTree = "<group>"; };
+		252EA3641C5904D80016D5EC /* Formateur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formateur.h; sourceTree = "<group>"; };
+		252EA3651C5904D80016D5EC /* Formateur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formateur.m; sourceTree = "<group>"; };
+		252EA3671C5910490016D5EC /* Classe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Classe.h; sourceTree = "<group>"; };
+		252EA3681C5910490016D5EC /* Classe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Classe.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +71,17 @@
 			isa = PBXGroup;
 			children = (
 				252EA34A1C5904710016D5EC /* AppDelegate.h */,
+				252EA35E1C5904AD0016D5EC /* Personne.h */,
+				252EA35F1C5904AD0016D5EC /* Personne.m */,
+				252EA3611C5904BC0016D5EC /* Etudiant.h */,
+				252EA3621C5904BC0016D5EC /* Etudiant.m */,
+				252EA3641C5904D80016D5EC /* Formateur.h */,
+				252EA3651C5904D80016D5EC /* Formateur.m */,
 				252EA34B1C5904710016D5EC /* AppDelegate.m */,
 				252EA34D1C5904710016D5EC /* ViewController.h */,
 				252EA34E1C5904710016D5EC /* ViewController.m */,
+				252EA3671C5910490016D5EC /* Classe.h */,
+				252EA3681C5910490016D5EC /* Classe.m */,
 				252EA3501C5904710016D5EC /* Main.storyboard */,
 				252EA3531C5904710016D5EC /* Assets.xcassets */,
 				252EA3551C5904710016D5EC /* LaunchScreen.storyboard */,
@@ -149,9 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				252EA3631C5904BC0016D5EC /* Etudiant.m in Sources */,
 				252EA34F1C5904710016D5EC /* ViewController.m in Sources */,
 				252EA34C1C5904710016D5EC /* AppDelegate.m in Sources */,
+				252EA3661C5904D80016D5EC /* Formateur.m in Sources */,
+				252EA3691C5910490016D5EC /* Classe.m in Sources */,
 				252EA3491C5904710016D5EC /* main.m in Sources */,
+				252EA3601C5904AD0016D5EC /* Personne.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +324,7 @@
 				252EA35D1C5904710016D5EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

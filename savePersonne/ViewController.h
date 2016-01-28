@@ -10,6 +10,17 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *inputName;
+@property (weak, nonatomic) IBOutlet UITextField *inputFirstName;
+@property (weak, nonatomic) IBOutlet UISwitch *switchFormateur;
+@property (weak, nonatomic) IBOutlet UISwitch *switchEtudiant;
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
+
+- (IBAction)validerButton:(id)sender;
+- (IBAction)annulerButton:(id)sender;
+- (void)errorLabelSelector;
+- (void)temporaryErrorLabelDisplayer;
+
 
 @end
 
