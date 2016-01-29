@@ -10,4 +10,8 @@
 
 @implementation Formateur
 
+- (NSString *)getClass{
+    return @"Formateur";
+}
+
 @end

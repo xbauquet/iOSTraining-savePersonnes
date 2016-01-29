@@ -11,15 +11,14 @@
 
 @interface Classe : NSObject
 
-@property NSMutableDictionary *usersList;
-@property NSString *loadedUsersList;
+@property NSArray * listOfUsers;
 @property int nbOfFormateur;
 @property int nbOfEtudiant;
 
-//- (void)registerUsersList:(NSMutableDictionary * )usersList ;
 - (void)registerUsersList;
 - (void)addUser:(Personne *)newUser;
 - (void)loadUsersList;
 - (id)initWithDico;
+- (NSString *)documentPath;
 @end
 

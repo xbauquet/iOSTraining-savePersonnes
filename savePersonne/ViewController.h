@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UISwitch *switchEtudiant;
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
-- (IBAction)validerButton:(id)sender;
 - (IBAction)annulerButton:(id)sender;
 - (void)errorLabelSelector;
 - (void)temporaryErrorLabelDisplayer;

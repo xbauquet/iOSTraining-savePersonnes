@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Personne : NSObject
+@interface Personne : NSObject <NSCoding>
 
 /*
  * Properties
@@ -18,5 +18,8 @@
 @property NSString *type;
 
 - (id)initWithName:(NSString *)firstName lastName:(NSString *)lastName;
+- (void)encodeWithCoder:(NSCoder *)aCoder;
+- (id)initWithCoder:(NSCoder *)coder;
+- (NSString *)getClass;
 
 @end

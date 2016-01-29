@@ -11,4 +11,6 @@
 
 @interface Formateur : Personne
 
+- (NSString *)getClass;
+
 @end

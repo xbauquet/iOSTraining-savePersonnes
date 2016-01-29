@@ -10,5 +10,5 @@
 #import "Personne.h"
 
 @interface Etudiant : Personne
-
+- (NSString *)getClass;
 @end

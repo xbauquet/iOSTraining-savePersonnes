@@ -10,4 +10,9 @@
 
 @implementation Etudiant
 
+- (NSString *)getClass{
+    return @"Etudiant";
+}
+
+
 @end

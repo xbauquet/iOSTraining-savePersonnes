@@ -11,6 +11,7 @@
 #import "Etudiant.h"
 #import "Personne.h"
 #import "Classe.h"
+#import "DetailViewController.h"
 
 @interface ViewController ()
 
@@ -60,7 +61,6 @@ Classe * classe;
 }
 
 
-
 /*
  * En cas de MemoryWarning essaye de liberer de la memoire.
  * input: void
@@ -70,45 +70,6 @@ Classe * classe;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
-/*
- * Actions effectuées lors de l'appuis sur le bouton Valider.
-    - Test les erreurs de saisie dans le formulaire
-    - Crée les nouveaux objets Personnage (Formateur, Etudiant ...)
-    - Enregistre la liste des Personnages dans un fichier
- * input: (id)
- * return: void
- */
-- (IBAction)validerButton:(id)sender {
-    
-    // Test les erreurs et appel temporaryErrorLabelDisplayer
-    if((self.switchFormateur.on && self.switchEtudiant.on) || ![self.inputName hasText]  || ![self.inputFirstName hasText]){
-        [self annulerButton:nil];
-        [self temporaryErrorLabelDisplayer];
-        
-    }else if(self.switchFormateur.on){
-        
-        Formateur *newFormateur = [[Formateur alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text]];
-        
-        [classe addUser:newFormateur];
-        
-    }else if(self.switchEtudiant.on){
-        Etudiant *newEtudiant = [[Etudiant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text]];
-
-        [classe addUser:newEtudiant];
-        
-    }else{
-        [self annulerButton:nil];
-        [self temporaryErrorLabelDisplayer];
-    }
-
-    [classe registerUsersList];
-    
-    [self annulerButton:nil];
-}
-
 
 
 /*
@@ -122,6 +83,60 @@ Classe * classe;
     self.switchEtudiant.on = NO;
     self.switchFormateur.on = NO;
     
+}
+
+
+/*
+ * Actions effectuées lors de l'appuis sur le bouton Valider.
+ - Test les erreurs de saisie dans le formulaire
+ - Crée les nouveaux objets Personnage (Formateur, Etudiant ...)
+ - Enregistre la liste des Personnages dans un fichier
+ * input: (id)
+ * return: void
+ */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+ 
+    if([segue.identifier isEqualToString:@"detailViewControllerSegue"]){
+        
+        DetailViewController *detailVC = segue.destinationViewController;
+        
+        // Test les erreurs et appel temporaryErrorLabelDisplayer
+        if((self.switchFormateur.on && self.switchEtudiant.on) || ![self.inputName hasText]  || ![self.inputFirstName hasText]){
+            [self annulerButton:nil];
+            [self temporaryErrorLabelDisplayer];
+            
+        }else if(self.switchFormateur.on){
+            
+            Formateur *newFormateur = [[Formateur alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text]];
+            
+            [classe addUser:newFormateur];
+            detailVC.personne = newFormateur;
+        }else if(self.switchEtudiant.on){
+            Etudiant *newEtudiant = [[Etudiant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text]];
+            
+            [classe addUser:newEtudiant];
+            detailVC.personne = newEtudiant;
+        }else{
+            [self annulerButton:nil];
+            [self temporaryErrorLabelDisplayer];
+        }
+        
+        [classe registerUsersList];
+        /*NSLog(@"%@", classe.listOfUsers);
+        for(Personne * pers in classe.listOfUsers){
+            if([pers isKindOfClass:[Formateur class]]){
+                NSLog(@"Formateur");
+            }else if([pers isKindOfClass:[Etudiant class]]){
+                NSLog(@"Etudiant");
+            }
+            NSLog(@"%@", pers.name);
+            NSLog(@"%@", pers.firstName);
+        }*/
+        
+        [self annulerButton:nil];
+        
+        
+    }
 }
 
 @end

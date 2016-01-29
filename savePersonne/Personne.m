@@ -7,8 +7,11 @@
 //
 
 #import "Personne.h"
+#define PersonneName @"name"
+#define PersonneFirstName @"firstName"
 
 @implementation Personne
+
 
 - (id)initWithName:(NSString *)firstName lastName:(NSString *)lastName{
     
@@ -20,5 +23,23 @@
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)coder{
+    [coder encodeObject:self.name forKey:PersonneName];
+    [coder encodeObject:self.firstName forKey:PersonneFirstName];
+    
+}
+
+- (id)initWithCoder:(NSCoder *)coder{
+    self = [super init];
+    if(self){
+        _name = [coder decodeObjectForKey:PersonneName];
+        _firstName = [coder decodeObjectForKey:PersonneFirstName];
+    }
+    return self;
+}
+
+- (NSString *)getClass{
+    return @"Personne";
+}
 
 @end
