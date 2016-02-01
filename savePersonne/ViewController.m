@@ -21,6 +21,8 @@
 @implementation ViewController
 Classe * classe;
 
+
+
 /*
  * Méthode executé au démarage de l'app (constructeur de la view).
  * input: void
@@ -87,6 +89,32 @@ Classe * classe;
     
 }
 
+// Test les erreurs et appel temporaryErrorLabelDisplayer
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    
+    if((self.switchFormateur.on && self.switchEtudiant.on)){
+        [self annulerButton:nil];
+        [self temporaryErrorLabelDisplayer:NSLocalizedString(@"errorMoreThanOneClass", nil)];
+        return NO;
+        
+    }else if (![self.inputName hasText]){
+        [self annulerButton:nil];
+        [self temporaryErrorLabelDisplayer:NSLocalizedString(@"errorMissingName", nil)];
+        return NO;
+    }else if (![self.inputFirstName hasText]){
+        [self annulerButton:nil];
+        [self temporaryErrorLabelDisplayer:NSLocalizedString(@"errorMissingFirstName", nil)];
+        return NO;
+    }else if(!self.switchFormateur.on && !self.switchEtudiant.on && !self.switchIntervenant.on){
+        [self annulerButton:nil];
+        [self temporaryErrorLabelDisplayer:NSLocalizedString(@"errorMissingClass", nil)];
+        return NO;
+    }
+    
+    return YES;
+}
+
+
 
 /*
  * Actions effectuées lors de l'appuis sur le bouton Valider.
@@ -102,20 +130,7 @@ Classe * classe;
         
         DetailViewController *detailVC = segue.destinationViewController;
         
-        // Test les erreurs et appel temporaryErrorLabelDisplayer
-        if((self.switchFormateur.on && self.switchEtudiant.on)){
-            [self annulerButton:nil];
-            [self temporaryErrorLabelDisplayer:@"Plus d'un role selectionné"];
-            
-        }else if (![self.inputName hasText]){
-            [self annulerButton:nil];
-            [self temporaryErrorLabelDisplayer:@"Nom manquant"];
-            
-        }else if (![self.inputFirstName hasText]){
-            [self annulerButton:nil];
-            [self temporaryErrorLabelDisplayer:@"Prenom manquant"];
-            
-        }else if(self.switchFormateur.on){ // FORMATEUR
+        if(self.switchFormateur.on){ // FORMATEUR
             Formateur *newFormateur = [[Formateur alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[self saveImage]];
             [classe addUser:newFormateur];
             detailVC.personne = newFormateur;
@@ -131,12 +146,7 @@ Classe * classe;
             detailVC.personne = newIntervenant;
             
             
-        }else{
-            [self annulerButton:nil];
-            [self temporaryErrorLabelDisplayer:@"error"];
         }
-        
-        [classe registerUsersList];
         [self annulerButton:nil];
         
         

@@ -10,3 +10,8 @@
 "formateur" = "Formateur";
 "etudiant" = "Etudiant";
 "intervenant" = "Intervenant";
+"errorMoreThanOneClass" = "Plus d'un role selectionné";
+"errorMissingName" = "Nom manquant";
+"errorMissingFirstName" = "Prénom manquant";
+"errorMissingClass" = "Role manquant";
+"error" = "Erreur";

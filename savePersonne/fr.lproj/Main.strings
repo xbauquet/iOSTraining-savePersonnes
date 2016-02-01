@@ -1,21 +1,54 @@
 
-/* Class = "UIButton"; normalTitle = "Valider"; ObjectID = "E9N-FR-H5g"; */
-"E9N-FR-H5g.normalTitle" = "Valider";
+/* Class = "UINavigationItem"; title = "List"; ObjectID = "4D3-Rr-Tia"; */
+"4D3-Rr-Tia.title" = "Liste";
 
-/* Class = "UILabel"; text = "Formateur"; ObjectID = "UhI-Tf-kCc"; */
+/* Class = "UILabel"; text = "Title"; ObjectID = "6lO-yM-jMP"; */
+"6lO-yM-jMP.text" = "Title";
+
+/* Class = "UILabel"; text = "Last name:"; ObjectID = "8bI-OH-Y4r"; */
+"8bI-OH-Y4r.text" = "Nom:";
+
+/* Class = "UINavigationItem"; title = "Display"; ObjectID = "ATO-p1-Jn1"; */
+"ATO-p1-Jn1.title" = "Affichage";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "JsG-rC-pD4"; */
+"JsG-rC-pD4.text" = "Label";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "MQj-fd-3I2"; */
+"MQj-fd-3I2.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "First name"; ObjectID = "Qcr-VW-8Qg"; */
+"Qcr-VW-8Qg.text" = "Prénom";
+
+/* Class = "UILabel"; text = "Trainer"; ObjectID = "UhI-Tf-kCc"; */
 "UhI-Tf-kCc.text" = "Formateur";
+
+/* Class = "UILabel"; text = "Class:"; ObjectID = "UtM-Qf-IBL"; */
+"UtM-Qf-IBL.text" = "Classs:";
 
 /* Class = "UILabel"; text = "Erreur"; ObjectID = "WJb-3X-DKU"; */
 "WJb-3X-DKU.text" = "Erreur";
 
-/* Class = "UIButton"; normalTitle = "Annuler"; ObjectID = "jQf-cO-BNa"; */
-"jQf-cO-BNa.normalTitle" = "Annuler";
+/* Class = "UITextField"; placeholder = "Nom"; ObjectID = "YtS-lL-jvS"; */
+"YtS-lL-jvS.placeholder" = "Nom";
 
-/* Class = "UILabel"; text = "Prenom"; ObjectID = "o96-Tc-3py"; */
-"o96-Tc-3py.text" = "Prenom";
+/* Class = "UINavigationItem"; title = "Formulaire"; ObjectID = "haf-Og-oEW"; */
+"haf-Og-oEW.title" = "Form";
 
-/* Class = "UILabel"; text = "Etudiant"; ObjectID = "rDR-9L-Pkp"; */
+/* Class = "UILabel"; text = "Speaker"; ObjectID = "iUE-Y9-PJm"; */
+"iUE-Y9-PJm.text" = "Intervenant";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "jQf-cO-BNa"; */
+"jQf-cO-BNa.normalTitle" = "Annulé";
+
+/* Class = "UITextField"; placeholder = "Prénom"; ObjectID = "jpb-cB-WDG"; */
+"jpb-cB-WDG.placeholder" = "Prénom";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lK6-Ao-p9f"; */
+"lK6-Ao-p9f.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lo5-HM-A1Q"; */
+"lo5-HM-A1Q.text" = "Label";
+
+/* Class = "UILabel"; text = "Student"; ObjectID = "rDR-9L-Pkp"; */
 "rDR-9L-Pkp.text" = "Etudiant";
-
-/* Class = "UILabel"; text = "Nom"; ObjectID = "uIq-dg-oLk"; */
-"uIq-dg-oLk.text" = "Nom";

@@ -48,10 +48,10 @@
 		254145F01C5F595500FD6252 /* Intervenant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Intervenant.h; sourceTree = "<group>"; };
 		254145F11C5F595500FD6252 /* Intervenant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Intervenant.m; sourceTree = "<group>"; };
 		254145F61C5F611500FD6252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = savePersonne/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		254145F81C5F635C00FD6252 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = savePersonne/fr.lproj/Main.strings; sourceTree = "<group>"; };
 		254145F91C5F635C00FD6252 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		254145FD1C5F68E900FD6252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		254145FF1C5F68EC00FD6252 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		255588081C5F6F180087D1E1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = savePersonne/fr.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,7 +222,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				254145F61C5F611500FD6252 /* Base */,
-				254145F81C5F635C00FD6252 /* fr */,
+				255588081C5F6F180087D1E1 /* fr */,
 			);
 			name = Main.storyboard;
 			path = ..;

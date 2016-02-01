@@ -20,5 +20,6 @@
 - (void)loadUsersList;
 - (id)initWithDico;
 - (NSString *)documentPath;
+- (void)removeUserAtIndex:(NSUInteger) index;
 @end
 

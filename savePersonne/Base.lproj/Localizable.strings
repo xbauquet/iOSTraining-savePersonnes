@@ -9,3 +9,8 @@
 "formateur" = "Trainer";
 "etudiant" = "Etudiant";
 "intervenant" = "Speaker";
+"errorMoreThanOneClass" = "More than one role selected";
+"errorMissingName" = "Last name missing";
+"errorMissingFirstName" = "First name missing";
+"errorMissingClass" = "Role missing";
+"error" = "Error";

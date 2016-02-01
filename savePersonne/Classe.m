@@ -23,12 +23,29 @@
     return self;
 }
 
-
+/*
+ * Return the path for the saving file
+ * input: void
+ * return: NSString
+ */
 - (NSString *)documentPath{
     NSArray * paths = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
     NSURL *documentsURL = [paths lastObject];
-    NSLog(@"%@", documentsURL);
     return [NSString stringWithFormat:@"%@/%@", documentsURL.path, @"usersList.txt"];
+}
+
+
+/*
+ * Singleton
+ * Crée la classe une seul fois et est donc réutilisable plusieurs fois
+ * Avec ca on peut créer seulement une fois la classe
+ */
++ (id)sharedCLassManager{
+    static Classe * listOfUsers = nil;
+    if(listOfUsers == nil){
+        listOfUsers = [[self alloc] init];
+    }
+    return listOfUsers;
 }
 
 
@@ -50,8 +67,6 @@
     
     NSString *path = [self documentPath];
     BOOL result = [data writeToFile:path atomically:YES];
-    
-         
 }
 
 /*
@@ -75,7 +90,6 @@
     }
     //NSError *error;
     self.listOfUsers = [personnesSauvees copy];
-    
 }
 
 
@@ -89,7 +103,20 @@
     [tmp addObjectsFromArray:self.listOfUsers];
     [tmp addObject:newUser];
     self.listOfUsers = [tmp copy];
-   
+    [self registerUsersList];
+}
+
+
+/*
+ * Supprime une personne dans la listes de personnes
+ * input: NSUInter, index de la personne à supprimer
+ * return: void
+ */
+- (void)removeUserAtIndex:(NSUInteger) index{
+    NSMutableArray *tmp = [[NSMutableArray alloc] initWithArray:self.listOfUsers];
+    [tmp removeObjectAtIndex:index];
+    self.listOfUsers = [tmp copy];
+    [self registerUsersList];
 }
 
 @end

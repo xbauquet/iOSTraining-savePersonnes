@@ -22,6 +22,11 @@ Classe * tableViewClasse;
     tableViewClasse = [[Classe alloc]initWithDico];
 
     
+    // Crée le refresh quand on tire la liste vers le bas
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    self.refreshControl.backgroundColor = [UIColor purpleColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self action:@selector(refreshMe) forControlEvents:UIControlEventValueChanged];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -40,6 +45,15 @@ Classe * tableViewClasse;
     [self.tableView reloadData];
     
 }
+
+
+- (void)refreshMe{
+    [tableViewClasse loadUsersList];
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
+}
+
+
 
 #pragma mark - Table view data source
 
@@ -95,18 +109,11 @@ Classe * tableViewClasse;
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [tableViewClasse removeUserAtIndex:indexPath.row];
         
-        NSMutableArray *tmp = [[NSMutableArray alloc] initWithArray:tableViewClasse.listOfUsers];
-        [tmp removeObjectAtIndex:indexPath.row];
-        tableViewClasse.listOfUsers = [tmp copy];
-        [tableViewClasse registerUsersList];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
     }
-    
-    /*else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }*/
 }
 
 

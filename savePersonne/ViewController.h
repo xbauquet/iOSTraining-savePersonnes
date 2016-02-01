@@ -26,5 +26,7 @@
 - (IBAction)changeImageButton:(id)sender;
 - (NSString *)saveImage;
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender;
+
 @end
 
