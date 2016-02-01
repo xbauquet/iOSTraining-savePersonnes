@@ -14,9 +14,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *classLabelRegistered;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabelRegistered;
 @property (weak, nonatomic) IBOutlet UILabel *firstNameLabelRegistered;
-
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property Personne * personne;
 
-- (IBAction)returnCloseDetailViewControler:(id)sender;
+//- (IBAction)returnCloseDetailViewControler:(id)sender;
 
 @end

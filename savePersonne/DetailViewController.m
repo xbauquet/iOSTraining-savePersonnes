@@ -20,6 +20,11 @@
     [self.classLabelRegistered setText:[self.personne getClass]];
     [self.nameLabelRegistered setText:self.personne.name];
     [self.firstNameLabelRegistered setText:self.personne.firstName];
+    
+    //display image
+    NSString *documentsDirectory =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",[NSString stringWithFormat:@"%@", self.personne.imageName]]];
+    self.imageView.image = [UIImage imageWithContentsOfFile:filePath];
 
      }
 
@@ -30,10 +35,10 @@
 
 /*
  * Ferme la vu.
- */
+ *
 - (IBAction)returnCloseDetailViewControler:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
+}*/
 
 
 /*

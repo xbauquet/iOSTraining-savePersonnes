@@ -27,6 +27,7 @@
 - (NSString *)documentPath{
     NSArray * paths = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
     NSURL *documentsURL = [paths lastObject];
+    NSLog(@"%@", documentsURL);
     return [NSString stringWithFormat:@"%@/%@", documentsURL.path, @"usersList.txt"];
 }
 
@@ -68,7 +69,7 @@
     NSKeyedUnarchiver *decoder;
     data = [NSData dataWithContentsOfFile:path];
     decoder = [[NSKeyedUnarchiver alloc]initForReadingWithData:data];
-    int nbPersonnes = [decoder decodeIntegerForKey:@"usersList"];
+    int nbPersonnes = (int)[decoder decodeIntegerForKey:@"usersList"];
     for(int i=1; i <= nbPersonnes; i++) {
         [personnesSauvees addObject:[decoder decodeObjectForKey:[NSString stringWithFormat:@"%i",i]]];
     }

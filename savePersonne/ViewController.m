@@ -10,10 +10,11 @@
 #import "Formateur.h"
 #import "Etudiant.h"
 #import "Personne.h"
+#import "Intervenant.h"
 #import "Classe.h"
 #import "DetailViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UIImagePickerControllerDelegate>
 
 @end
 
@@ -28,11 +29,9 @@ Classe * classe;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self.inputName setText:@""];
-    [self.inputFirstName setText:@""];
+    [self annulerButton:nil];
     [self.errorLabel setText:@""];
-    self.switchEtudiant.on = NO;
-    self.switchFormateur.on = NO;
+    
     classe = [[Classe alloc]initWithDico];
     
     [classe loadUsersList];
@@ -55,10 +54,11 @@ Classe * classe;
  * input: void
  * return: void
  */
-- (void)temporaryErrorLabelDisplayer{
-    [self.errorLabel setText:@"Erreur"];
+- (void)temporaryErrorLabelDisplayer:(NSString *) label{
+    [self.errorLabel setText:label];
     [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector: @selector(errorLabelSelector) userInfo:nil repeats:NO];
 }
+
 
 
 /*
@@ -82,6 +82,8 @@ Classe * classe;
     [self.inputFirstName setText:@""];
     self.switchEtudiant.on = NO;
     self.switchFormateur.on = NO;
+    self.switchIntervenant.on = NO;
+    self.imageView.image = nil;
     
 }
 
@@ -101,42 +103,88 @@ Classe * classe;
         DetailViewController *detailVC = segue.destinationViewController;
         
         // Test les erreurs et appel temporaryErrorLabelDisplayer
-        if((self.switchFormateur.on && self.switchEtudiant.on) || ![self.inputName hasText]  || ![self.inputFirstName hasText]){
+        if((self.switchFormateur.on && self.switchEtudiant.on)){
             [self annulerButton:nil];
-            [self temporaryErrorLabelDisplayer];
+            [self temporaryErrorLabelDisplayer:@"Plus d'un role selectionné"];
             
-        }else if(self.switchFormateur.on){
+        }else if (![self.inputName hasText]){
+            [self annulerButton:nil];
+            [self temporaryErrorLabelDisplayer:@"Nom manquant"];
             
-            Formateur *newFormateur = [[Formateur alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text]];
+        }else if (![self.inputFirstName hasText]){
+            [self annulerButton:nil];
+            [self temporaryErrorLabelDisplayer:@"Prenom manquant"];
             
+        }else if(self.switchFormateur.on){ // FORMATEUR
+            Formateur *newFormateur = [[Formateur alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[self saveImage]];
             [classe addUser:newFormateur];
             detailVC.personne = newFormateur;
-        }else if(self.switchEtudiant.on){
-            Etudiant *newEtudiant = [[Etudiant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text]];
             
+        }else if(self.switchEtudiant.on){ // ETUDIANT
+            Etudiant *newEtudiant = [[Etudiant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[self saveImage]];
             [classe addUser:newEtudiant];
             detailVC.personne = newEtudiant;
+            
+        }else if(self.switchIntervenant.on){ // INTERVENANT
+             Intervenant *newIntervenant = [[Intervenant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[self saveImage]];
+            [classe addUser:newIntervenant];
+            detailVC.personne = newIntervenant;
+            
+            
         }else{
             [self annulerButton:nil];
-            [self temporaryErrorLabelDisplayer];
+            [self temporaryErrorLabelDisplayer:@"error"];
         }
         
         [classe registerUsersList];
-        /*NSLog(@"%@", classe.listOfUsers);
-        for(Personne * pers in classe.listOfUsers){
-            if([pers isKindOfClass:[Formateur class]]){
-                NSLog(@"Formateur");
-            }else if([pers isKindOfClass:[Etudiant class]]){
-                NSLog(@"Etudiant");
-            }
-            NSLog(@"%@", pers.name);
-            NSLog(@"%@", pers.firstName);
-        }*/
-        
         [self annulerButton:nil];
         
         
     }
 }
+
+/* --------------------------------------
+ * Image
+ * --------------------------------------
+ */
+
+- (NSString *)saveImage{
+    //save image
+    NSString *documentsDirectory =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+    NSString *guid = [[NSUUID new]UUIDString];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", guid]];
+    
+    NSData * imageData = UIImagePNGRepresentation(self.imageView.image);
+    BOOL result = [imageData writeToFile:filePath atomically:YES];
+    return [NSString stringWithFormat:@"%@.png", guid];
+}
+
+/*
+ * Changement de l'image dans imageView
+ */
+- (void)imagePickerController:(UIImagePickerController *) picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.imageView.image = chosenImage;
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+/*
+ * onClick sur changeImageButton déclanche le selecteur d'image du téléphone
+ */
+- (IBAction)changeImageButton:(id)sender{
+    UIImagePickerController * picker = [[UIImagePickerController alloc]init];
+    picker.delegate = self; // dit au téléphone de renvoyer la photo selectionnée avec picker vers nous.
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    //picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    //picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+}
+
+
+
+
 
 @end

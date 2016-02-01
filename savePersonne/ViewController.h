@@ -14,12 +14,17 @@
 @property (weak, nonatomic) IBOutlet UITextField *inputFirstName;
 @property (weak, nonatomic) IBOutlet UISwitch *switchFormateur;
 @property (weak, nonatomic) IBOutlet UISwitch *switchEtudiant;
+@property (weak, nonatomic) IBOutlet UISwitch *switchIntervenant;
+
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 
 - (IBAction)annulerButton:(id)sender;
 - (void)errorLabelSelector;
-- (void)temporaryErrorLabelDisplayer;
-
+- (void)temporaryErrorLabelDisplayer:(NSString *) label;
+- (IBAction)changeImageButton:(id)sender;
+- (NSString *)saveImage;
 
 @end
 

@@ -11,7 +11,7 @@
 @implementation Formateur
 
 - (NSString *)getClass{
-    return @"Formateur";
+    return NSLocalizedString(@"formateur", nil);
 }
 
 @end

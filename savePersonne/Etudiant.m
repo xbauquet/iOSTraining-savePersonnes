@@ -11,7 +11,7 @@
 @implementation Etudiant
 
 - (NSString *)getClass{
-    return @"Etudiant";
+    return NSLocalizedString(@"etudiant", nil);
 }
 
 

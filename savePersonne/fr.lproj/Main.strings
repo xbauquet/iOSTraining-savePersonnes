@@ -1,0 +1,21 @@
+
+/* Class = "UIButton"; normalTitle = "Valider"; ObjectID = "E9N-FR-H5g"; */
+"E9N-FR-H5g.normalTitle" = "Valider";
+
+/* Class = "UILabel"; text = "Formateur"; ObjectID = "UhI-Tf-kCc"; */
+"UhI-Tf-kCc.text" = "Formateur";
+
+/* Class = "UILabel"; text = "Erreur"; ObjectID = "WJb-3X-DKU"; */
+"WJb-3X-DKU.text" = "Erreur";
+
+/* Class = "UIButton"; normalTitle = "Annuler"; ObjectID = "jQf-cO-BNa"; */
+"jQf-cO-BNa.normalTitle" = "Annuler";
+
+/* Class = "UILabel"; text = "Prenom"; ObjectID = "o96-Tc-3py"; */
+"o96-Tc-3py.text" = "Prenom";
+
+/* Class = "UILabel"; text = "Etudiant"; ObjectID = "rDR-9L-Pkp"; */
+"rDR-9L-Pkp.text" = "Etudiant";
+
+/* Class = "UILabel"; text = "Nom"; ObjectID = "uIq-dg-oLk"; */
+"uIq-dg-oLk.text" = "Nom";

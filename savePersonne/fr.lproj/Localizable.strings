@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  savePersonne
+
+  Created by xavier on 01/02/2016.
+  Copyright © 2016 xavier. All rights reserved.
+*/
+
+"personne" = "Personne";
+"formateur" = "Formateur";
+"etudiant" = "Etudiant";
+"intervenant" = "Intervenant";
