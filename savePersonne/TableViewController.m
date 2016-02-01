@@ -15,11 +15,10 @@
 @end
 
 @implementation TableViewController
-Classe * tableViewClasse;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    tableViewClasse = [[Classe alloc]initWithDico];
 
     
     // Crée le refresh quand on tire la liste vers le bas
@@ -41,14 +40,14 @@ Classe * tableViewClasse;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [tableViewClasse loadUsersList];
+    [[Classe sharedCLassManager] loadUsersList];
     [self.tableView reloadData];
     
 }
 
 
 - (void)refreshMe{
-    [tableViewClasse loadUsersList];
+    [[Classe sharedCLassManager] loadUsersList];
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }
@@ -62,13 +61,13 @@ Classe * tableViewClasse;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return tableViewClasse.listOfUsers.count;
+    return [Classe sharedCLassManager].listOfUsers.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    Personne *personne = [tableViewClasse.listOfUsers objectAtIndex:indexPath.row];
+    Personne *personne = [[Classe sharedCLassManager].listOfUsers objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"maCellule" forIndexPath:indexPath];
     
@@ -91,7 +90,7 @@ Classe * tableViewClasse;
     if([segue.identifier isEqualToString:@"showDetailSegue"]){
         DetailViewController *detailVC = segue.destinationViewController;
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-        detailVC.personne = [tableViewClasse.listOfUsers objectAtIndex:ip.row];
+        detailVC.personne = [[Classe sharedCLassManager].listOfUsers objectAtIndex:ip.row];
     }
 }
 
@@ -109,7 +108,7 @@ Classe * tableViewClasse;
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableViewClasse removeUserAtIndex:indexPath.row];
+        [[Classe sharedCLassManager] removeUserAtIndex:indexPath.row];
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         

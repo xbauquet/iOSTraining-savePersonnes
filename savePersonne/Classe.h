@@ -21,5 +21,7 @@
 - (id)initWithDico;
 - (NSString *)documentPath;
 - (void)removeUserAtIndex:(NSUInteger) index;
+// singleton
++ (Classe*)sharedCLassManager;
 @end
 

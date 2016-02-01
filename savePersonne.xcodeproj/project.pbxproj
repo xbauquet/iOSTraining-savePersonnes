@@ -21,6 +21,7 @@
 		254145F21C5F595500FD6252 /* Intervenant.m in Sources */ = {isa = PBXBuildFile; fileRef = 254145F11C5F595500FD6252 /* Intervenant.m */; };
 		254145F71C5F611500FD6252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254145F51C5F611500FD6252 /* Main.storyboard */; };
 		254145FC1C5F68E900FD6252 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 254145FE1C5F68E900FD6252 /* Localizable.strings */; };
+		2555880B1C5FB00E0087D1E1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2555880D1C5FB00E0087D1E1 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		254145FD1C5F68E900FD6252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		254145FF1C5F68EC00FD6252 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		255588081C5F6F180087D1E1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = savePersonne/fr.lproj/Main.strings; sourceTree = "<group>"; };
+		2555880C1C5FB00E0087D1E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,8 @@
 				252EA3621C5904BC0016D5EC /* Etudiant.m */,
 				252EA3641C5904D80016D5EC /* Formateur.h */,
 				252EA3651C5904D80016D5EC /* Formateur.m */,
+				254145F01C5F595500FD6252 /* Intervenant.h */,
+				254145F11C5F595500FD6252 /* Intervenant.m */,
 				254145FE1C5F68E900FD6252 /* Localizable.strings */,
 				252EA34B1C5904710016D5EC /* AppDelegate.m */,
 				252EA34D1C5904710016D5EC /* ViewController.h */,
@@ -102,9 +106,8 @@
 				2534DF941C5B99890046789F /* TableViewController.h */,
 				2534DF951C5B99890046789F /* TableViewController.m */,
 				254145F51C5F611500FD6252 /* Main.storyboard */,
+				2555880D1C5FB00E0087D1E1 /* Storyboard.storyboard */,
 				252EA3531C5904710016D5EC /* Assets.xcassets */,
-				254145F01C5F595500FD6252 /* Intervenant.h */,
-				254145F11C5F595500FD6252 /* Intervenant.m */,
 				252EA3551C5904710016D5EC /* LaunchScreen.storyboard */,
 				252EA3581C5904710016D5EC /* Info.plist */,
 				252EA3471C5904710016D5EC /* Supporting Files */,
@@ -183,6 +186,7 @@
 				254145FC1C5F68E900FD6252 /* Localizable.strings in Resources */,
 				252EA3571C5904710016D5EC /* LaunchScreen.storyboard in Resources */,
 				252EA3541C5904710016D5EC /* Assets.xcassets in Resources */,
+				2555880B1C5FB00E0087D1E1 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +239,14 @@
 				254145FF1C5F68EC00FD6252 /* fr */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		2555880D1C5FB00E0087D1E1 /* Storyboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2555880C1C5FB00E0087D1E1 /* Base */,
+			);
+			name = Storyboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

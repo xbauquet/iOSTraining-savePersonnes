@@ -40,7 +40,7 @@
  * Crée la classe une seul fois et est donc réutilisable plusieurs fois
  * Avec ca on peut créer seulement une fois la classe
  */
-+ (id)sharedCLassManager{
++ (Classe*)sharedCLassManager{
     static Classe * listOfUsers = nil;
     if(listOfUsers == nil){
         listOfUsers = [[self alloc] init];

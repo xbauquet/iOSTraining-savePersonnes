@@ -19,8 +19,6 @@
 @end
 
 @implementation ViewController
-Classe * classe;
-
 
 
 /*
@@ -34,9 +32,7 @@ Classe * classe;
     [self annulerButton:nil];
     [self.errorLabel setText:@""];
     
-    classe = [[Classe alloc]initWithDico];
-    
-    [classe loadUsersList];
+    [[Classe sharedCLassManager] loadUsersList];
 }
 
 
@@ -132,17 +128,17 @@ Classe * classe;
         
         if(self.switchFormateur.on){ // FORMATEUR
             Formateur *newFormateur = [[Formateur alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[self saveImage]];
-            [classe addUser:newFormateur];
+            [[Classe sharedCLassManager] addUser:newFormateur];
             detailVC.personne = newFormateur;
             
         }else if(self.switchEtudiant.on){ // ETUDIANT
             Etudiant *newEtudiant = [[Etudiant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[self saveImage]];
-            [classe addUser:newEtudiant];
+            [[Classe sharedCLassManager] addUser:newEtudiant];
             detailVC.personne = newEtudiant;
             
         }else if(self.switchIntervenant.on){ // INTERVENANT
              Intervenant *newIntervenant = [[Intervenant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[self saveImage]];
-            [classe addUser:newIntervenant];
+            [[Classe sharedCLassManager] addUser:newIntervenant];
             detailVC.personne = newIntervenant;
             
             
