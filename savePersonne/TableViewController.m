@@ -123,8 +123,9 @@
     UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
         
         ModifyViewController * mVC = [[ModifyViewController alloc] initWithIndexPath:indexPath];
+        NSLog(@"%ld", (long)indexPath.row);
+        //[self performSegueWithIdentifier:@"modifySegue" sender:self];
         [self performSegueWithIdentifier:@"modifySegue" sender:self];
-        
     }];
     
     editAction.backgroundColor = [UIColor blueColor];

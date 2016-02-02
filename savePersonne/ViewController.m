@@ -178,6 +178,16 @@
     
 }
 
+- (IBAction)takePictureButton:(id)sender{
+    UIImagePickerController * picker = [[UIImagePickerController alloc]init];
+    picker.delegate = self; // dit au téléphone de renvoyer la photo selectionnée avec picker vers nous.
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+
 
 
 

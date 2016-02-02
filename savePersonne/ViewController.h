@@ -25,6 +25,7 @@
 - (void)temporaryErrorLabelDisplayer:(NSString *) label;
 - (IBAction)changeImageButton:(id)sender;
 //- (NSString *)saveImage;
+- (IBAction)takePictureButton:(id)sender;
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender;
 
