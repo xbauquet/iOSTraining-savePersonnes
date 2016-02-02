@@ -10,6 +10,11 @@
 #import "Classe.h"
 #import "DetailViewController.h"
 #import "ModifyViewController.h"
+#import "TableViewCellController.h"
+#import "Personne.h"
+#import "Etudiant.h"
+#import "Formateur.h"
+#import "Intervenant.h"
 
 @interface TableViewController ()
 
@@ -21,18 +26,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self slideRefresh];
     
-    // Crée le refresh quand on tire la liste vers le bas
-    self.refreshControl = [[UIRefreshControl alloc]init];
-    self.refreshControl.backgroundColor = [UIColor purpleColor];
-    self.refreshControl.tintColor = [UIColor whiteColor];
-    [self.refreshControl addTarget:self action:@selector(refreshMe) forControlEvents:UIControlEventValueChanged];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)slideRefresh{
+    // Crée le refresh quand on tire la liste vers le bas
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    self.refreshControl.backgroundColor = [UIColor purpleColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self action:@selector(refreshMe) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,20 +78,42 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     Personne *personne = [[Classe sharedCLassManager].listOfUsers objectAtIndex:indexPath.row];
+    UITableViewCell *cell;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"maCellule" forIndexPath:indexPath];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", personne.name, personne.firstName];
     
-    cell.detailTextLabel.text = personne.getClass;
+    if([personne isKindOfClass:[Etudiant class]]){
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:@"maCelluleCustom" forIndexPath:indexPath];
+        ((TableViewCellController *)cell).cellLabel.text = [NSString stringWithFormat:@"%@ %@", personne.name, personne.firstName];
+        NSString *documentsDirectory =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+        NSString *filePath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",[NSString stringWithFormat:@"%@", personne.imageName]]];
+        ((TableViewCellController *)cell).cellImage.image = [UIImage imageWithContentsOfFile:filePath];
+        
+        
+    }else{
     
-    NSString *documentsDirectory =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",[NSString stringWithFormat:@"%@", personne.imageName]]];
-    cell.imageView.image = [UIImage imageWithContentsOfFile:filePath];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"maCellule" forIndexPath:indexPath];
     
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", personne.name, personne.firstName];
+    
+        cell.detailTextLabel.text = personne.getClass;
+        
+        NSString *documentsDirectory =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+        NSString *filePath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",[NSString stringWithFormat:@"%@", personne.imageName]]];
+        cell.imageView.image = [UIImage imageWithContentsOfFile:filePath];
+    }
    
-    
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    Personne *personne = [[Classe sharedCLassManager].listOfUsers objectAtIndex:indexPath.row];
+    if([personne isKindOfClass:[Etudiant class]]){
+        return 180;
+    }else{
+        return 44;
+    }
 }
 
 #pragma mark - Navigation
@@ -92,6 +123,10 @@
         DetailViewController *detailVC = segue.destinationViewController;
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
         detailVC.personne = [[Classe sharedCLassManager].listOfUsers objectAtIndex:ip.row];
+    }else if([segue.identifier isEqualToString:@"modifySegue"]){
+        ModifyViewController * mVC = [[ModifyViewController alloc] init];
+        mVC.indexPath = self.rowIndex;
+        NSLog(@"%ld", (long)mVC.indexPath.row);
     }
 }
 
@@ -122,13 +157,12 @@
     
     UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
         
-        ModifyViewController * mVC = [[ModifyViewController alloc] initWithIndexPath:indexPath];
-        NSLog(@"%ld", (long)indexPath.row);
-        //[self performSegueWithIdentifier:@"modifySegue" sender:self];
+        self.rowIndex = indexPath;
         [self performSegueWithIdentifier:@"modifySegue" sender:self];
+
     }];
-    
-    editAction.backgroundColor = [UIColor blueColor];
+    //[UIColor colorWithRed:14.0/255.0 green:114.0/255.0 blue:199.0/255.0 alpha:1]
+    editAction.backgroundColor = [UIColor colorWithRed:129.0/255.0 green:207.0/255.0 blue:224.0/255.0 alpha:1];
     
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
         

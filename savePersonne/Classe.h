@@ -18,7 +18,7 @@
 - (void)registerUsersList;
 - (void)addUser:(Personne *)newUser;
 - (void)loadUsersList;
-- (id)initWithDico;
+//- (id)initWithDico;
 - (NSString *)documentPath;
 - (void)removeUserAtIndex:(NSUInteger) index;
 - (NSString *)saveImage:(UIImage *)image;

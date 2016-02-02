@@ -10,6 +10,6 @@
 
 @interface TableViewController : UITableViewController
 
-
+@property NSIndexPath * rowIndex;
 
 @end

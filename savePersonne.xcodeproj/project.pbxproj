@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25209CBE1C60FAA000004328 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25209CBD1C60FAA000004328 /* CollectionViewController.m */; };
+		25209CC11C60FC7800004328 /* CollectionViewCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25209CC01C60FC7800004328 /* CollectionViewCellController.m */; };
 		252EA3491C5904710016D5EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EA3481C5904710016D5EC /* main.m */; };
 		252EA34C1C5904710016D5EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EA34B1C5904710016D5EC /* AppDelegate.m */; };
 		252EA34F1C5904710016D5EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EA34E1C5904710016D5EC /* ViewController.m */; };
@@ -18,6 +20,7 @@
 		252EA3691C5910490016D5EC /* Classe.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EA3681C5910490016D5EC /* Classe.m */; };
 		252FC1D01C5A5DB200617142 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FC1CF1C5A5DB200617142 /* DetailViewController.m */; };
 		253211441C6095C700C2E27A /* ModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 253211431C6095C700C2E27A /* ModifyViewController.m */; };
+		253211471C60DE9600C2E27A /* TableViewCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 253211461C60DE9600C2E27A /* TableViewCellController.m */; };
 		2534DF961C5B99890046789F /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2534DF951C5B99890046789F /* TableViewController.m */; };
 		254145F21C5F595500FD6252 /* Intervenant.m in Sources */ = {isa = PBXBuildFile; fileRef = 254145F11C5F595500FD6252 /* Intervenant.m */; };
 		254145F71C5F611500FD6252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254145F51C5F611500FD6252 /* Main.storyboard */; };
@@ -26,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25209CBC1C60FAA000004328 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		25209CBD1C60FAA000004328 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		25209CBF1C60FC7800004328 /* CollectionViewCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCellController.h; sourceTree = "<group>"; };
+		25209CC01C60FC7800004328 /* CollectionViewCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCellController.m; sourceTree = "<group>"; };
 		252EA3441C5904700016D5EC /* savePersonne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = savePersonne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		252EA3481C5904710016D5EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		252EA34A1C5904710016D5EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +54,8 @@
 		252FC1CF1C5A5DB200617142 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		253211421C6095C700C2E27A /* ModifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyViewController.h; sourceTree = "<group>"; };
 		253211431C6095C700C2E27A /* ModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyViewController.m; sourceTree = "<group>"; };
+		253211451C60DE9600C2E27A /* TableViewCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellController.h; sourceTree = "<group>"; };
+		253211461C60DE9600C2E27A /* TableViewCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellController.m; sourceTree = "<group>"; };
 		2534DF941C5B99890046789F /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		2534DF951C5B99890046789F /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		254145F01C5F595500FD6252 /* Intervenant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Intervenant.h; sourceTree = "<group>"; };
@@ -110,6 +119,12 @@
 				2534DF951C5B99890046789F /* TableViewController.m */,
 				253211421C6095C700C2E27A /* ModifyViewController.h */,
 				253211431C6095C700C2E27A /* ModifyViewController.m */,
+				253211451C60DE9600C2E27A /* TableViewCellController.h */,
+				253211461C60DE9600C2E27A /* TableViewCellController.m */,
+				25209CBC1C60FAA000004328 /* CollectionViewController.h */,
+				25209CBD1C60FAA000004328 /* CollectionViewController.m */,
+				25209CBF1C60FC7800004328 /* CollectionViewCellController.h */,
+				25209CC01C60FC7800004328 /* CollectionViewCellController.m */,
 				254145F51C5F611500FD6252 /* Main.storyboard */,
 				2555880D1C5FB00E0087D1E1 /* Storyboard.storyboard */,
 				252EA3531C5904710016D5EC /* Assets.xcassets */,
@@ -209,8 +224,11 @@
 				252FC1D01C5A5DB200617142 /* DetailViewController.m in Sources */,
 				2534DF961C5B99890046789F /* TableViewController.m in Sources */,
 				252EA3661C5904D80016D5EC /* Formateur.m in Sources */,
+				253211471C60DE9600C2E27A /* TableViewCellController.m in Sources */,
+				25209CC11C60FC7800004328 /* CollectionViewCellController.m in Sources */,
 				252EA3691C5910490016D5EC /* Classe.m in Sources */,
 				252EA3491C5904710016D5EC /* main.m in Sources */,
+				25209CBE1C60FAA000004328 /* CollectionViewController.m in Sources */,
 				254145F21C5F595500FD6252 /* Intervenant.m in Sources */,
 				252EA3601C5904AD0016D5EC /* Personne.m in Sources */,
 			);

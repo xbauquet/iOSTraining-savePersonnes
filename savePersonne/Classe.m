@@ -25,6 +25,15 @@
 }
 
 
+
+- (NSArray *)getEtudiants{
+    NSPredicate * isKindOfEtudiant = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings){
+        return [evaluatedObject isKindOfClass:[Etudiant class]];
+    }];
+    NSArray *filteredArray = [self.listOfUsers filteredArrayUsingPredicate:isKindOfEtudiant];
+    return filteredArray;
+}
+
 /*
  * Singleton
  * Crée la classe une seul fois et est donc réutilisable plusieurs fois
