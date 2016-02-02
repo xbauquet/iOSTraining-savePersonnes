@@ -9,6 +9,7 @@
 #import "TableViewController.h"
 #import "Classe.h"
 #import "DetailViewController.h"
+#import "ModifyViewController.h"
 
 @interface TableViewController ()
 
@@ -105,7 +106,7 @@
 
 
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [[Classe sharedCLassManager] removeUserAtIndex:indexPath.row];
@@ -113,6 +114,33 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
     }
+}*/
+
+
+
+-(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
+        
+        ModifyViewController * mVC = [[ModifyViewController alloc] initWithIndexPath:indexPath];
+        [self performSegueWithIdentifier:@"modifySegue" sender:self];
+        
+    }];
+    
+    editAction.backgroundColor = [UIColor blueColor];
+    
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
+        
+        [[Classe sharedCLassManager] removeUserAtIndex:indexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+    }];
+    
+    deleteAction.backgroundColor = [UIColor redColor];
+    
+    return @[deleteAction,editAction];
+    
 }
 
 

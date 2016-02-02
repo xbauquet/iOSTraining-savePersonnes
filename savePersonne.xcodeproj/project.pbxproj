@@ -17,6 +17,7 @@
 		252EA3661C5904D80016D5EC /* Formateur.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EA3651C5904D80016D5EC /* Formateur.m */; };
 		252EA3691C5910490016D5EC /* Classe.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EA3681C5910490016D5EC /* Classe.m */; };
 		252FC1D01C5A5DB200617142 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FC1CF1C5A5DB200617142 /* DetailViewController.m */; };
+		253211441C6095C700C2E27A /* ModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 253211431C6095C700C2E27A /* ModifyViewController.m */; };
 		2534DF961C5B99890046789F /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2534DF951C5B99890046789F /* TableViewController.m */; };
 		254145F21C5F595500FD6252 /* Intervenant.m in Sources */ = {isa = PBXBuildFile; fileRef = 254145F11C5F595500FD6252 /* Intervenant.m */; };
 		254145F71C5F611500FD6252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254145F51C5F611500FD6252 /* Main.storyboard */; };
@@ -44,6 +45,8 @@
 		252EA3681C5910490016D5EC /* Classe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Classe.m; sourceTree = "<group>"; };
 		252FC1CE1C5A5DB200617142 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		252FC1CF1C5A5DB200617142 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		253211421C6095C700C2E27A /* ModifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyViewController.h; sourceTree = "<group>"; };
+		253211431C6095C700C2E27A /* ModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyViewController.m; sourceTree = "<group>"; };
 		2534DF941C5B99890046789F /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		2534DF951C5B99890046789F /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		254145F01C5F595500FD6252 /* Intervenant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Intervenant.h; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				252FC1CF1C5A5DB200617142 /* DetailViewController.m */,
 				2534DF941C5B99890046789F /* TableViewController.h */,
 				2534DF951C5B99890046789F /* TableViewController.m */,
+				253211421C6095C700C2E27A /* ModifyViewController.h */,
+				253211431C6095C700C2E27A /* ModifyViewController.m */,
 				254145F51C5F611500FD6252 /* Main.storyboard */,
 				2555880D1C5FB00E0087D1E1 /* Storyboard.storyboard */,
 				252EA3531C5904710016D5EC /* Assets.xcassets */,
@@ -200,6 +205,7 @@
 				252EA3631C5904BC0016D5EC /* Etudiant.m in Sources */,
 				252EA34F1C5904710016D5EC /* ViewController.m in Sources */,
 				252EA34C1C5904710016D5EC /* AppDelegate.m in Sources */,
+				253211441C6095C700C2E27A /* ModifyViewController.m in Sources */,
 				252FC1D01C5A5DB200617142 /* DetailViewController.m in Sources */,
 				2534DF961C5B99890046789F /* TableViewController.m in Sources */,
 				252EA3661C5904D80016D5EC /* Formateur.m in Sources */,

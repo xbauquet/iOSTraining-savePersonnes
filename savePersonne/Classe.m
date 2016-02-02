@@ -14,16 +14,6 @@
 
 
 /*
- * Constructeur
- */
-- (id)initWithDico{
-    self.listOfUsers = [NSArray new];
-    self.nbOfEtudiant = 0;
-    self.nbOfFormateur = 0;
-    return self;
-}
-
-/*
  * Return the path for the saving file
  * input: void
  * return: NSString
@@ -48,6 +38,16 @@
     return listOfUsers;
 }
 
+- (NSString *)saveImage:(UIImage * )image{
+    //save image
+    NSString *documentsDirectory =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+    NSString *guid = [[NSUUID new]UUIDString];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", guid]];
+    
+    NSData * imageData = UIImagePNGRepresentation(image);
+    BOOL result = [imageData writeToFile:filePath atomically:YES];
+    return [NSString stringWithFormat:@"%@.png", guid];
+}
 
 /*
  * cree un fichier binaire encoder pour pouvoir recreer automatiquement les objects au load du fichier.

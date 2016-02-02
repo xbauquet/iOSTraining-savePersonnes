@@ -127,17 +127,17 @@
         DetailViewController *detailVC = segue.destinationViewController;
         
         if(self.switchFormateur.on){ // FORMATEUR
-            Formateur *newFormateur = [[Formateur alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[self saveImage]];
+            Formateur *newFormateur = [[Formateur alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[[Classe sharedCLassManager] saveImage:self.imageView.image]];
             [[Classe sharedCLassManager] addUser:newFormateur];
             detailVC.personne = newFormateur;
             
         }else if(self.switchEtudiant.on){ // ETUDIANT
-            Etudiant *newEtudiant = [[Etudiant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[self saveImage]];
+            Etudiant *newEtudiant = [[Etudiant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[[Classe sharedCLassManager] saveImage:self.imageView.image]];
             [[Classe sharedCLassManager] addUser:newEtudiant];
             detailVC.personne = newEtudiant;
             
         }else if(self.switchIntervenant.on){ // INTERVENANT
-             Intervenant *newIntervenant = [[Intervenant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[self saveImage]];
+            Intervenant *newIntervenant = [[Intervenant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[[Classe sharedCLassManager] saveImage:self.imageView.image]];
             [[Classe sharedCLassManager] addUser:newIntervenant];
             detailVC.personne = newIntervenant;
             
@@ -153,17 +153,6 @@
  * Image
  * --------------------------------------
  */
-
-- (NSString *)saveImage{
-    //save image
-    NSString *documentsDirectory =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-    NSString *guid = [[NSUUID new]UUIDString];
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", guid]];
-    
-    NSData * imageData = UIImagePNGRepresentation(self.imageView.image);
-    BOOL result = [imageData writeToFile:filePath atomically:YES];
-    return [NSString stringWithFormat:@"%@.png", guid];
-}
 
 /*
  * Changement de l'image dans imageView

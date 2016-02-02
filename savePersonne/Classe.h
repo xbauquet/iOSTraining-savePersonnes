@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 #import "Personne.h"
 
 @interface Classe : NSObject
 
 @property NSArray * listOfUsers;
-@property int nbOfFormateur;
-@property int nbOfEtudiant;
 
 - (void)registerUsersList;
 - (void)addUser:(Personne *)newUser;
@@ -21,6 +21,8 @@
 - (id)initWithDico;
 - (NSString *)documentPath;
 - (void)removeUserAtIndex:(NSUInteger) index;
+- (NSString *)saveImage:(UIImage *)image;
+
 // singleton
 + (Classe*)sharedCLassManager;
 @end
