@@ -18,9 +18,12 @@
 		252EA3631C5904BC0016D5EC /* Etudiant.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EA3621C5904BC0016D5EC /* Etudiant.m */; };
 		252EA3661C5904D80016D5EC /* Formateur.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EA3651C5904D80016D5EC /* Formateur.m */; };
 		252EA3691C5910490016D5EC /* Classe.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EA3681C5910490016D5EC /* Classe.m */; };
+		252EB19A1C634D94002ED910 /* localPage.html in Resources */ = {isa = PBXBuildFile; fileRef = 252EB1991C634D94002ED910 /* localPage.html */; };
+		252EB19C1C6354BC002ED910 /* localPage2.html in Resources */ = {isa = PBXBuildFile; fileRef = 252EB19B1C6354BC002ED910 /* localPage2.html */; };
 		252FC1D01C5A5DB200617142 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FC1CF1C5A5DB200617142 /* DetailViewController.m */; };
 		253211441C6095C700C2E27A /* ModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 253211431C6095C700C2E27A /* ModifyViewController.m */; };
 		253211471C60DE9600C2E27A /* TableViewCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 253211461C60DE9600C2E27A /* TableViewCellController.m */; };
+		2533533A1C63443900E88A5B /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 253353391C63443900E88A5B /* WebViewController.m */; };
 		2534DF961C5B99890046789F /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2534DF951C5B99890046789F /* TableViewController.m */; };
 		254145F21C5F595500FD6252 /* Intervenant.m in Sources */ = {isa = PBXBuildFile; fileRef = 254145F11C5F595500FD6252 /* Intervenant.m */; };
 		254145F71C5F611500FD6252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254145F51C5F611500FD6252 /* Main.storyboard */; };
@@ -50,12 +53,16 @@
 		252EA3651C5904D80016D5EC /* Formateur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formateur.m; sourceTree = "<group>"; };
 		252EA3671C5910490016D5EC /* Classe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Classe.h; sourceTree = "<group>"; };
 		252EA3681C5910490016D5EC /* Classe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Classe.m; sourceTree = "<group>"; };
+		252EB1991C634D94002ED910 /* localPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = localPage.html; sourceTree = "<group>"; };
+		252EB19B1C6354BC002ED910 /* localPage2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = localPage2.html; sourceTree = "<group>"; };
 		252FC1CE1C5A5DB200617142 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		252FC1CF1C5A5DB200617142 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		253211421C6095C700C2E27A /* ModifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyViewController.h; sourceTree = "<group>"; };
 		253211431C6095C700C2E27A /* ModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyViewController.m; sourceTree = "<group>"; };
 		253211451C60DE9600C2E27A /* TableViewCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellController.h; sourceTree = "<group>"; };
 		253211461C60DE9600C2E27A /* TableViewCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellController.m; sourceTree = "<group>"; };
+		253353381C63443900E88A5B /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		253353391C63443900E88A5B /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		2534DF941C5B99890046789F /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		2534DF951C5B99890046789F /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		254145F01C5F595500FD6252 /* Intervenant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Intervenant.h; sourceTree = "<group>"; };
@@ -125,7 +132,11 @@
 				25209CBD1C60FAA000004328 /* CollectionViewController.m */,
 				25209CBF1C60FC7800004328 /* CollectionViewCellController.h */,
 				25209CC01C60FC7800004328 /* CollectionViewCellController.m */,
+				253353381C63443900E88A5B /* WebViewController.h */,
+				253353391C63443900E88A5B /* WebViewController.m */,
+				252EB19B1C6354BC002ED910 /* localPage2.html */,
 				254145F51C5F611500FD6252 /* Main.storyboard */,
+				252EB1991C634D94002ED910 /* localPage.html */,
 				2555880D1C5FB00E0087D1E1 /* Storyboard.storyboard */,
 				252EA3531C5904710016D5EC /* Assets.xcassets */,
 				252EA3551C5904710016D5EC /* LaunchScreen.storyboard */,
@@ -206,7 +217,9 @@
 				254145FC1C5F68E900FD6252 /* Localizable.strings in Resources */,
 				252EA3571C5904710016D5EC /* LaunchScreen.storyboard in Resources */,
 				252EA3541C5904710016D5EC /* Assets.xcassets in Resources */,
+				252EB19C1C6354BC002ED910 /* localPage2.html in Resources */,
 				2555880B1C5FB00E0087D1E1 /* Storyboard.storyboard in Resources */,
+				252EB19A1C634D94002ED910 /* localPage.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				252EA3631C5904BC0016D5EC /* Etudiant.m in Sources */,
+				2533533A1C63443900E88A5B /* WebViewController.m in Sources */,
 				252EA34F1C5904710016D5EC /* ViewController.m in Sources */,
 				252EA34C1C5904710016D5EC /* AppDelegate.m in Sources */,
 				253211441C6095C700C2E27A /* ModifyViewController.m in Sources */,

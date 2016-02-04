@@ -33,13 +33,13 @@
 "YtS-lL-jvS.placeholder" = "Nom";
 
 /* Class = "UINavigationItem"; title = "Formulaire"; ObjectID = "haf-Og-oEW"; */
-"haf-Og-oEW.title" = "Form";
+"haf-Og-oEW.title" = "Formulaire";
 
 /* Class = "UILabel"; text = "Speaker"; ObjectID = "iUE-Y9-PJm"; */
 "iUE-Y9-PJm.text" = "Intervenant";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "jQf-cO-BNa"; */
-"jQf-cO-BNa.normalTitle" = "Annulé";
+"jQf-cO-BNa.normalTitle" = "Annuler";
 
 /* Class = "UITextField"; placeholder = "Prénom"; ObjectID = "jpb-cB-WDG"; */
 "jpb-cB-WDG.placeholder" = "Prénom";

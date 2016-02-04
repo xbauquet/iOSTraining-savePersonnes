@@ -125,8 +125,15 @@
         detailVC.personne = [[Classe sharedCLassManager].listOfUsers objectAtIndex:ip.row];
     }else if([segue.identifier isEqualToString:@"modifySegue"]){
         ModifyViewController * mVC = [[ModifyViewController alloc] init];
-        mVC.indexPath = self.rowIndex;
-        NSLog(@"%ld", (long)mVC.indexPath.row);
+        
+        
+        UITableViewCell *cell = (UITableViewCell *) sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        
+        mVC.indexPath = indexPath;
+        NSLog(@"%ld", (long)indexPath.row);
+        //mVC.indexPath = self.rowIndex;
+        //NSLog(@"%ld", (long)mVC.indexPath.row);
     }
 }
 

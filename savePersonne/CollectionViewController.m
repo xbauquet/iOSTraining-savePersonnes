@@ -30,6 +30,14 @@ static NSString * const reuseIdentifier = @"cell";
     // Do any additional setup after loading the view.
 }
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    [[Classe sharedCLassManager] loadUsersList];
+    [self.collectionView reloadData];
+    
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
