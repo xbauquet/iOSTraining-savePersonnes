@@ -20,6 +20,8 @@
 
 @implementation ViewController
 
+//affichage de la marguerite
+//UIActivityIndicatorView *activityView;
 
 /*
  * Méthode executé au démarage de l'app (constructeur de la view).
@@ -30,9 +32,8 @@
     [super viewDidLoad];
     [self annulerButton:nil];
     [self.errorLabel setText:@""];
-    
-    [[Classe sharedCLassManager] loadUsersList];
 }
+
 
 
 
@@ -126,17 +127,53 @@
         
         if(self.switchFormateur.on){ // FORMATEUR
             Formateur *newFormateur = [[Formateur alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[[Classe sharedCLassManager] saveImage:self.imageView.image]];
-            [[Classe sharedCLassManager] addUser:newFormateur];
+            
+            // threading
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+                
+                [[Classe sharedCLassManager] addUser:newFormateur];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    //blabla
+                });
+                
+            });
+            
+            
             detailVC.personne = newFormateur;
             
         }else if(self.switchEtudiant.on){ // ETUDIANT
             Etudiant *newEtudiant = [[Etudiant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[[Classe sharedCLassManager] saveImage:self.imageView.image]];
-            [[Classe sharedCLassManager] addUser:newEtudiant];
+            
+            // threading
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+                
+                [[Classe sharedCLassManager] addUser:newEtudiant];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    //blabla
+                });
+                
+            });
+            
+
             detailVC.personne = newEtudiant;
             
         }else if(self.switchIntervenant.on){ // INTERVENANT
             Intervenant *newIntervenant = [[Intervenant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[[Classe sharedCLassManager] saveImage:self.imageView.image]];
-            [[Classe sharedCLassManager] addUser:newIntervenant];
+            
+            
+            // threading
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+                
+                [[Classe sharedCLassManager] addUser:newIntervenant];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    //blabla
+                });
+                
+            });
+            
             detailVC.personne = newIntervenant;
             
             

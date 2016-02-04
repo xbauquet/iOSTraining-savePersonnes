@@ -22,6 +22,9 @@
 
 @implementation TableViewController
 
+//affichage de la marguerite
+UIActivityIndicatorView *activityView;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,15 +53,45 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [[Classe sharedCLassManager] loadUsersList];
-    [self.tableView reloadData];
+    activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityView.center=self.view.center;
+    [self.view addSubview:activityView];
+    
+    [activityView startAnimating];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        [[Classe sharedCLassManager] loadUsersList];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.tableView reloadData];
+            [activityView stopAnimating];
+            
+            
+        });
+        
+    });
     
 }
 
 
 - (void)refreshMe{
-    [[Classe sharedCLassManager] loadUsersList];
-    [self.tableView reloadData];
+    
+    //affichage de la marguerite
+    [activityView startAnimating];
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        
+        [[Classe sharedCLassManager] loadUsersList];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.tableView reloadData];
+            [activityView stopAnimating];
+            
+        });
+        
+    });
     [self.refreshControl endRefreshing];
 }
 
@@ -173,7 +206,17 @@
     
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
         
+        // threading
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            
         [[Classe sharedCLassManager] removeUserAtIndex:indexPath.row];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //blabla
+            });
+            
+        });
+        
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         

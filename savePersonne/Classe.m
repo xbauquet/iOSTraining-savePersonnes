@@ -65,6 +65,14 @@
  *  return: void
  */
 - (void)registerUsersList{
+    
+    
+    // Ralentisseur
+    for (int i = 0; i<100; i++){
+        [NSThread sleepForTimeInterval:.05];
+        NSLog(@"%i", i);
+    }
+    
     NSMutableData * data = [[NSMutableData alloc] init];
     NSKeyedArchiver * archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
     int i=1;
@@ -85,6 +93,14 @@
  *  return: void
  */
 - (void)loadUsersList{
+    
+    // Ralentisseur
+    for (int i = 0; i<100; i++){
+        [NSThread sleepForTimeInterval:.05];
+        NSLog(@"%i", i);
+    }
+    
+    
     NSMutableArray * personnesSauvees = [[NSMutableArray alloc]init];
     
     NSString *path = [self documentPath];
@@ -112,7 +128,9 @@
     [tmp addObjectsFromArray:self.listOfUsers];
     [tmp addObject:newUser];
     self.listOfUsers = [tmp copy];
+    
     [self registerUsersList];
+    
 }
 
 
@@ -125,6 +143,7 @@
     NSMutableArray *tmp = [[NSMutableArray alloc] initWithArray:self.listOfUsers];
     [tmp removeObjectAtIndex:index];
     self.listOfUsers = [tmp copy];
+    
     [self registerUsersList];
 }
 
