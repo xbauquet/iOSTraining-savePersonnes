@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self.classLabelRegistered setText:[NSString stringWithCString:object_getClassName(self.personne.class) encoding:NSUTF8StringEncoding]];
+
     [self.classLabelRegistered setText:[self.personne getClass]];
     [self.nameLabelRegistered setText:self.personne.name];
     [self.firstNameLabelRegistered setText:self.personne.firstName];
@@ -30,7 +30,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
