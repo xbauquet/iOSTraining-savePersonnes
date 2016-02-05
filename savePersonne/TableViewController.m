@@ -25,6 +25,8 @@
 //affichage de la marguerite
 UIActivityIndicatorView *activityView;
 
+NSIndexPath *tmpIndexPath;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,8 +56,9 @@ UIActivityIndicatorView *activityView;
 
 - (void)viewWillAppear:(BOOL)animated{
     activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    activityView.center=self.view.center;
+    activityView.center =self.view.center;
     [self.view addSubview:activityView];
+    activityView.color = [UIColor redColor];
     
     [activityView startAnimating];
     
@@ -156,17 +159,13 @@ UIActivityIndicatorView *activityView;
         DetailViewController *detailVC = segue.destinationViewController;
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
         detailVC.personne = [[Classe sharedCLassManager].listOfUsers objectAtIndex:ip.row];
+        
     }else if([segue.identifier isEqualToString:@"modifySegue"]){
-        ModifyViewController * mVC = [[ModifyViewController alloc] init];
-        
-        
-        UITableViewCell *cell = (UITableViewCell *) sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-        
-        mVC.indexPath = indexPath;
-        NSLog(@"%ld", (long)indexPath.row);
-        //mVC.indexPath = self.rowIndex;
-        //NSLog(@"%ld", (long)mVC.indexPath.row);
+        //ModifyViewController * mVC = [[ModifyViewController alloc] init];
+        //mVC.indexPath = tmpIndexPath;
+        ModifyViewController * mVC = [[ModifyViewController alloc] initWithIndexPath:tmpIndexPath];
+        NSLog(@"%ld", (long)tmpIndexPath.row);
+
     }
 }
 
@@ -194,7 +193,7 @@ UIActivityIndicatorView *activityView;
 
 
 -(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    tmpIndexPath = indexPath;
     UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
         
         self.rowIndex = indexPath;

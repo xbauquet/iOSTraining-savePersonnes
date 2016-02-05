@@ -9,6 +9,7 @@
 #import "Classe.h"
 #import "Formateur.h"
 #import "Etudiant.h"
+#import "Intervenant.h"
 
 @implementation Classe
 
@@ -26,7 +27,7 @@
 
 
 
-- (NSArray *)getEtudiants{
+- (NSArray *)getStudents{
     NSPredicate * isKindOfEtudiant = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings){
         return [evaluatedObject isKindOfClass:[Etudiant class]];
     }];
@@ -34,17 +35,35 @@
     return filteredArray;
 }
 
+- (NSArray *)getSpeakers{
+    NSPredicate * isKindOfEtudiant = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings){
+        return [evaluatedObject isKindOfClass:[Intervenant class]];
+    }];
+    NSArray *filteredArray = [self.listOfUsers filteredArrayUsingPredicate:isKindOfEtudiant];
+    return filteredArray;
+}
+
+
+- (NSArray *)getTrainers{
+    NSPredicate * isKindOfEtudiant = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings){
+        return [evaluatedObject isKindOfClass:[Formateur class]];
+    }];
+    NSArray *filteredArray = [self.listOfUsers filteredArrayUsingPredicate:isKindOfEtudiant];
+    return filteredArray;
+}
+
+
 /*
  * Singleton
  * Crée la classe une seul fois et est donc réutilisable plusieurs fois
  * Avec ca on peut créer seulement une fois la classe
  */
 + (Classe*)sharedCLassManager{
-    static Classe * listOfUsers = nil;
-    if(listOfUsers == nil){
-        listOfUsers = [[self alloc] init];
+    static Classe * classe = nil;
+    if(classe == nil){
+        classe = [[self alloc] init];
     }
-    return listOfUsers;
+    return classe;
 }
 
 - (NSString *)saveImage:(UIImage * )image{
@@ -68,10 +87,10 @@
     
     
     // Ralentisseur
-    for (int i = 0; i<100; i++){
+    /*for (int i = 0; i<100; i++){
         [NSThread sleepForTimeInterval:.05];
         NSLog(@"%i", i);
-    }
+    }*/
     
     NSMutableData * data = [[NSMutableData alloc] init];
     NSKeyedArchiver * archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
@@ -95,10 +114,10 @@
 - (void)loadUsersList{
     
     // Ralentisseur
-    for (int i = 0; i<100; i++){
+    /*for (int i = 0; i<100; i++){
         [NSThread sleepForTimeInterval:.05];
         NSLog(@"%i", i);
-    }
+    }*/
     
     
     NSMutableArray * personnesSauvees = [[NSMutableArray alloc]init];

@@ -29,6 +29,8 @@
 		254145F21C5F595500FD6252 /* Intervenant.m in Sources */ = {isa = PBXBuildFile; fileRef = 254145F11C5F595500FD6252 /* Intervenant.m */; };
 		254145F71C5F611500FD6252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254145F51C5F611500FD6252 /* Main.storyboard */; };
 		254145FC1C5F68E900FD6252 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 254145FE1C5F68E900FD6252 /* Localizable.strings */; };
+		2548E36E1C64944C00D1BFB9 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2548E36D1C64944C00D1BFB9 /* MapViewController.m */; };
+		2548E3711C64D55900D1BFB9 /* mapDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2548E3701C64D55900D1BFB9 /* mapDetailsViewController.m */; };
 		2555880B1C5FB00E0087D1E1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2555880D1C5FB00E0087D1E1 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,10 @@
 		254145F91C5F635C00FD6252 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		254145FD1C5F68E900FD6252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		254145FF1C5F68EC00FD6252 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2548E36C1C64944C00D1BFB9 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		2548E36D1C64944C00D1BFB9 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		2548E36F1C64D55900D1BFB9 /* mapDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapDetailsViewController.h; sourceTree = "<group>"; };
+		2548E3701C64D55900D1BFB9 /* mapDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapDetailsViewController.m; sourceTree = "<group>"; };
 		255588081C5F6F180087D1E1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = savePersonne/fr.lproj/Main.strings; sourceTree = "<group>"; };
 		2555880C1C5FB00E0087D1E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +126,8 @@
 				254145F11C5F595500FD6252 /* Intervenant.m */,
 				252EA3671C5910490016D5EC /* Classe.h */,
 				252EA3681C5910490016D5EC /* Classe.m */,
+				2548E36C1C64944C00D1BFB9 /* MapViewController.h */,
+				2548E36D1C64944C00D1BFB9 /* MapViewController.m */,
 				254145FE1C5F68E900FD6252 /* Localizable.strings */,
 				252EA34D1C5904710016D5EC /* ViewController.h */,
 				252EA34E1C5904710016D5EC /* ViewController.m */,
@@ -141,6 +149,8 @@
 				252EB19E1C63685C002ED910 /* ShortCutsViewController.m */,
 				252EB19B1C6354BC002ED910 /* localPage2.html */,
 				254145F51C5F611500FD6252 /* Main.storyboard */,
+				2548E36F1C64D55900D1BFB9 /* mapDetailsViewController.h */,
+				2548E3701C64D55900D1BFB9 /* mapDetailsViewController.m */,
 				252EB1991C634D94002ED910 /* localPage.html */,
 				2555880D1C5FB00E0087D1E1 /* Storyboard.storyboard */,
 				252EA3531C5904710016D5EC /* Assets.xcassets */,
@@ -250,6 +260,8 @@
 				252EA3491C5904710016D5EC /* main.m in Sources */,
 				25209CBE1C60FAA000004328 /* CollectionViewController.m in Sources */,
 				254145F21C5F595500FD6252 /* Intervenant.m in Sources */,
+				2548E36E1C64944C00D1BFB9 /* MapViewController.m in Sources */,
+				2548E3711C64D55900D1BFB9 /* mapDetailsViewController.m in Sources */,
 				252EA3601C5904AD0016D5EC /* Personne.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

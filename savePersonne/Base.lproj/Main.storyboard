@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Display-->
@@ -94,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="07o-0g-yFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1231" y="477"/>
+            <point key="canvasLocation" x="1099" y="483"/>
         </scene>
         <!--Form-->
         <scene sceneID="tne-QT-ifu">
@@ -346,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="973.5"/>
+            <point key="canvasLocation" x="387" y="879"/>
         </scene>
         <!--List-->
         <scene sceneID="TjL-wx-5ML">
@@ -425,7 +426,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5A-Ls-sga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-204" y="477"/>
+            <point key="canvasLocation" x="-326" y="477"/>
         </scene>
         <!--ModifyViewController-->
         <scene sceneID="dyi-sJ-jhC">
@@ -509,7 +510,133 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="un0-d0-EHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="514" y="31"/>
+            <point key="canvasLocation" x="387" y="77"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="0PL-tb-3Uh">
+            <objects>
+                <viewController id="s1e-SV-zzP" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dbr-CK-72u"/>
+                        <viewControllerLayoutGuide type="bottom" id="60Y-kd-peG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lVA-PU-wlg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NZQ-Ad-jfJ">
+                                <rect key="frame" x="20" y="42" width="180" height="84"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwz-4r-M0R">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llj-9J-EWb">
+                                        <rect key="frame" x="0.0" y="21" width="180" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obQ-9q-qRH">
+                                        <rect key="frame" x="0.0" y="42" width="180" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUd-h3-cOF">
+                                        <rect key="frame" x="0.0" y="63" width="180" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="llj-9J-EWb" firstAttribute="width" secondItem="HUd-h3-cOF" secondAttribute="width" id="YXl-Gg-FGG"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adresse" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RT8-k8-Dag">
+                                <rect key="frame" x="220" y="42" width="360" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EDE-jT-yA5">
+                                <rect key="frame" x="20" y="174" width="560" height="377"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MtV-Xv-5R2">
+                                <rect key="frame" x="156" y="134" width="289" height="29"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Hybride"/>
+                                    <segment title=""/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MtV-Xv-5R2" firstAttribute="centerX" secondItem="lVA-PU-wlg" secondAttribute="centerX" id="8yQ-tn-TVa"/>
+                            <constraint firstItem="EDE-jT-yA5" firstAttribute="top" secondItem="MtV-Xv-5R2" secondAttribute="bottom" constant="10" id="9Yd-Zg-J9o"/>
+                            <constraint firstItem="MtV-Xv-5R2" firstAttribute="top" secondItem="RT8-k8-Dag" secondAttribute="bottom" constant="10" id="ENW-zS-fKb"/>
+                            <constraint firstItem="NZQ-Ad-jfJ" firstAttribute="height" secondItem="RT8-k8-Dag" secondAttribute="height" id="Eyh-id-icQ"/>
+                            <constraint firstItem="60Y-kd-peG" firstAttribute="top" secondItem="EDE-jT-yA5" secondAttribute="bottom" id="JOQ-Q7-6a7"/>
+                            <constraint firstItem="RT8-k8-Dag" firstAttribute="top" secondItem="dbr-CK-72u" secondAttribute="bottom" constant="22" id="Jjf-OP-kGZ"/>
+                            <constraint firstItem="NZQ-Ad-jfJ" firstAttribute="top" secondItem="dbr-CK-72u" secondAttribute="bottom" constant="22" id="cgK-tO-IEn"/>
+                            <constraint firstItem="NZQ-Ad-jfJ" firstAttribute="width" relation="lessThanOrEqual" secondItem="RT8-k8-Dag" secondAttribute="width" multiplier="0.5" id="fnt-Va-3R5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RT8-k8-Dag" secondAttribute="trailing" id="lPd-KP-G5Z"/>
+                            <constraint firstItem="NZQ-Ad-jfJ" firstAttribute="leading" secondItem="lVA-PU-wlg" secondAttribute="leadingMargin" id="p7O-Fj-hpg"/>
+                            <constraint firstItem="EDE-jT-yA5" firstAttribute="leading" secondItem="lVA-PU-wlg" secondAttribute="leadingMargin" id="rq8-VN-Iw5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EDE-jT-yA5" secondAttribute="trailing" id="xPs-Vk-Zgs"/>
+                            <constraint firstItem="RT8-k8-Dag" firstAttribute="leading" secondItem="NZQ-Ad-jfJ" secondAttribute="trailing" constant="20" id="xh9-ZD-KVQ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="Globe Asia Filled-50" id="7kI-gZ-9M4"/>
+                    <connections>
+                        <outlet property="adresse" destination="RT8-k8-Dag" id="Zs6-q0-367"/>
+                        <outlet property="latitude" destination="llj-9J-EWb" id="zQJ-Ei-hHX"/>
+                        <outlet property="longitude" destination="HUd-h3-cOF" id="c93-mt-aEM"/>
+                        <outlet property="mapView" destination="EDE-jT-yA5" id="g40-uL-xE9"/>
+                        <segue destination="lzX-3K-wqv" kind="presentation" identifier="showMapDetail" id="9qr-ke-hkm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tTb-w5-LHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-313" y="1253"/>
+        </scene>
+        <!--Map Details View Controller-->
+        <scene sceneID="4BS-aZ-rh7">
+            <objects>
+                <viewController id="lzX-3K-wqv" customClass="mapDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f3B-zU-adh"/>
+                        <viewControllerLayoutGuide type="bottom" id="1dY-2y-dzV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="grN-j0-2RR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="toto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35N-dn-uuZ">
+                                <rect key="frame" x="26" y="28" width="31" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXi-fI-o3g">
+                                <rect key="frame" x="26" y="73" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButton:" destination="lzX-3K-wqv" eventType="touchUpInside" id="Mqf-9e-TqE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nA0-y8-IfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-313" y="1993"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BOZ-Fh-H5F">
@@ -525,11 +652,12 @@
                         <segue destination="vVv-6t-fPM" kind="relationship" relationship="viewControllers" id="LgC-bB-URd"/>
                         <segue destination="4AH-ce-MmW" kind="relationship" relationship="viewControllers" id="lpJ-Ay-Ug4"/>
                         <segue destination="utV-vi-BfD" kind="relationship" relationship="viewControllers" id="d8W-TG-POr"/>
+                        <segue destination="s1e-SV-zzP" kind="relationship" relationship="viewControllers" id="eR7-dB-7gf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MVx-Jh-t5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1741" y="477"/>
+            <point key="canvasLocation" x="-1735" y="477"/>
         </scene>
         <!--Contact-->
         <scene sceneID="NRu-Fb-Dai">
@@ -615,7 +743,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3WG-ff-ud0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1741" y="1173"/>
+            <point key="canvasLocation" x="-1735" y="1253"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tn7-lz-TUj">
@@ -788,11 +916,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rb2-mp-FDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1024" y="1173"/>
+            <point key="canvasLocation" x="-1024" y="1253"/>
         </scene>
     </scenes>
     <resources>
         <image name="Chrome Filled-50" width="22" height="22"/>
+        <image name="Globe Asia Filled-50" width="16" height="16"/>
         <image name="Menu Filled-50" width="22" height="22"/>
         <image name="Moderator-50" width="22" height="22"/>
     </resources>
