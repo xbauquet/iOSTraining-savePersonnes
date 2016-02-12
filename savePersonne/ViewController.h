@@ -28,6 +28,7 @@
 - (IBAction)takePictureButton:(id)sender;
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender;
+- (IBAction)touchOutside:(id)sender;
 
 @end
 

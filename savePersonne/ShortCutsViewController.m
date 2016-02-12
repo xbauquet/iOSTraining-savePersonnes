@@ -144,7 +144,7 @@
 
 - (IBAction)facebookButton:(UIButton *)sender {
     SLComposeViewController *socialComposerSheet;
-    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
         socialComposerSheet = [[SLComposeViewController alloc]init];
         socialComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         [socialComposerSheet setInitialText:@"Mon Post"];

@@ -32,14 +32,8 @@ NSIndexPath *tmpIndexPath;
     [super viewDidLoad];
 
     [self slideRefresh];
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
 
 - (void)slideRefresh{
     // Crée le refresh quand on tire la liste vers le bas
@@ -49,9 +43,9 @@ NSIndexPath *tmpIndexPath;
     [self.refreshControl addTarget:self action:@selector(refreshMe) forControlEvents:UIControlEventValueChanged];
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -161,10 +155,8 @@ NSIndexPath *tmpIndexPath;
         detailVC.personne = [[Classe sharedCLassManager].listOfUsers objectAtIndex:ip.row];
         
     }else if([segue.identifier isEqualToString:@"modifySegue"]){
-        //ModifyViewController * mVC = [[ModifyViewController alloc] init];
-        //mVC.indexPath = tmpIndexPath;
-        ModifyViewController * mVC = [[ModifyViewController alloc] initWithIndexPath:tmpIndexPath];
-        NSLog(@"%ld", (long)tmpIndexPath.row);
+        ModifyViewController * mVC = segue.destinationViewController;
+        mVC.indexPath = tmpIndexPath;
 
     }
 }
@@ -194,15 +186,19 @@ NSIndexPath *tmpIndexPath;
 
 -(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     tmpIndexPath = indexPath;
+    
+    // EDIT
     UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
-        
         self.rowIndex = indexPath;
         [self performSegueWithIdentifier:@"modifySegue" sender:self];
+        
 
     }];
     //[UIColor colorWithRed:14.0/255.0 green:114.0/255.0 blue:199.0/255.0 alpha:1]
     editAction.backgroundColor = [UIColor colorWithRed:129.0/255.0 green:207.0/255.0 blue:224.0/255.0 alpha:1];
     
+    
+    // DELETE
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
         
         // threading
