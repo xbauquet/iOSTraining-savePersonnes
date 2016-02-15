@@ -22,16 +22,6 @@
 		252EB19C1C6354BC002ED910 /* localPage2.html in Resources */ = {isa = PBXBuildFile; fileRef = 252EB19B1C6354BC002ED910 /* localPage2.html */; };
 		252EB19F1C63685C002ED910 /* ShortCutsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EB19E1C63685C002ED910 /* ShortCutsViewController.m */; };
 		252FA6DA1C6E15E1003E3020 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 252FA6D81C6E15E1003E3020 /* Model.xcdatamodeld */; };
-		252FA6EF1C6E17B4003E3020 /* SPPersonne+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FA6DC1C6E17B4003E3020 /* SPPersonne+CoreDataProperties.m */; };
-		252FA6F01C6E17B4003E3020 /* SPPersonne.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FA6DE1C6E17B4003E3020 /* SPPersonne.m */; };
-		252FA6F11C6E17B4003E3020 /* SPClasse+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FA6E01C6E17B4003E3020 /* SPClasse+CoreDataProperties.m */; };
-		252FA6F21C6E17B4003E3020 /* SPClasse.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FA6E21C6E17B4003E3020 /* SPClasse.m */; };
-		252FA6F31C6E17B4003E3020 /* SPFormateur+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FA6E41C6E17B4003E3020 /* SPFormateur+CoreDataProperties.m */; };
-		252FA6F41C6E17B4003E3020 /* SPFormateur.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FA6E61C6E17B4003E3020 /* SPFormateur.m */; };
-		252FA6F51C6E17B4003E3020 /* SPEtudiant+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FA6E81C6E17B4003E3020 /* SPEtudiant+CoreDataProperties.m */; };
-		252FA6F61C6E17B4003E3020 /* SPEtudiant.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FA6EA1C6E17B4003E3020 /* SPEtudiant.m */; };
-		252FA6F71C6E17B4003E3020 /* SPIntervenant+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FA6EC1C6E17B4003E3020 /* SPIntervenant+CoreDataProperties.m */; };
-		252FA6F81C6E17B4003E3020 /* SPIntervenant.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FA6EE1C6E17B4003E3020 /* SPIntervenant.m */; };
 		252FC1D01C5A5DB200617142 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FC1CF1C5A5DB200617142 /* DetailViewController.m */; };
 		253211441C6095C700C2E27A /* ModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 253211431C6095C700C2E27A /* ModifyViewController.m */; };
 		253211471C60DE9600C2E27A /* TableViewCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 253211461C60DE9600C2E27A /* TableViewCellController.m */; };
@@ -43,6 +33,16 @@
 		2548E36E1C64944C00D1BFB9 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2548E36D1C64944C00D1BFB9 /* MapViewController.m */; };
 		2548E3711C64D55900D1BFB9 /* mapDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2548E3701C64D55900D1BFB9 /* mapDetailsViewController.m */; };
 		2555880B1C5FB00E0087D1E1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2555880D1C5FB00E0087D1E1 /* Storyboard.storyboard */; };
+		256817701C71EF4000E6F70E /* SPPersonne+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2568175D1C71EF4000E6F70E /* SPPersonne+CoreDataProperties.m */; };
+		256817711C71EF4000E6F70E /* SPPersonne.m in Sources */ = {isa = PBXBuildFile; fileRef = 2568175F1C71EF4000E6F70E /* SPPersonne.m */; };
+		256817721C71EF4000E6F70E /* SPEtudiant+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 256817611C71EF4000E6F70E /* SPEtudiant+CoreDataProperties.m */; };
+		256817731C71EF4000E6F70E /* SPEtudiant.m in Sources */ = {isa = PBXBuildFile; fileRef = 256817631C71EF4000E6F70E /* SPEtudiant.m */; };
+		256817741C71EF4000E6F70E /* SPFormateur+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 256817651C71EF4000E6F70E /* SPFormateur+CoreDataProperties.m */; };
+		256817751C71EF4000E6F70E /* SPFormateur.m in Sources */ = {isa = PBXBuildFile; fileRef = 256817671C71EF4000E6F70E /* SPFormateur.m */; };
+		256817761C71EF4000E6F70E /* SPClasse+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 256817691C71EF4000E6F70E /* SPClasse+CoreDataProperties.m */; };
+		256817771C71EF4000E6F70E /* SPClasse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2568176B1C71EF4000E6F70E /* SPClasse.m */; };
+		256817781C71EF4000E6F70E /* SPIntervenant+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2568176D1C71EF4000E6F70E /* SPIntervenant+CoreDataProperties.m */; };
+		256817791C71EF4000E6F70E /* SPIntervenant.m in Sources */ = {isa = PBXBuildFile; fileRef = 2568176F1C71EF4000E6F70E /* SPIntervenant.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,26 +72,6 @@
 		252EB19D1C63685C002ED910 /* ShortCutsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortCutsViewController.h; sourceTree = "<group>"; };
 		252EB19E1C63685C002ED910 /* ShortCutsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortCutsViewController.m; sourceTree = "<group>"; };
 		252FA6D91C6E15E1003E3020 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		252FA6DB1C6E17B4003E3020 /* SPPersonne+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPPersonne+CoreDataProperties.h"; sourceTree = "<group>"; };
-		252FA6DC1C6E17B4003E3020 /* SPPersonne+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPPersonne+CoreDataProperties.m"; sourceTree = "<group>"; };
-		252FA6DD1C6E17B4003E3020 /* SPPersonne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPersonne.h; sourceTree = "<group>"; };
-		252FA6DE1C6E17B4003E3020 /* SPPersonne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPersonne.m; sourceTree = "<group>"; };
-		252FA6DF1C6E17B4003E3020 /* SPClasse+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPClasse+CoreDataProperties.h"; sourceTree = "<group>"; };
-		252FA6E01C6E17B4003E3020 /* SPClasse+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPClasse+CoreDataProperties.m"; sourceTree = "<group>"; };
-		252FA6E11C6E17B4003E3020 /* SPClasse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPClasse.h; sourceTree = "<group>"; };
-		252FA6E21C6E17B4003E3020 /* SPClasse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPClasse.m; sourceTree = "<group>"; };
-		252FA6E31C6E17B4003E3020 /* SPFormateur+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPFormateur+CoreDataProperties.h"; sourceTree = "<group>"; };
-		252FA6E41C6E17B4003E3020 /* SPFormateur+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPFormateur+CoreDataProperties.m"; sourceTree = "<group>"; };
-		252FA6E51C6E17B4003E3020 /* SPFormateur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFormateur.h; sourceTree = "<group>"; };
-		252FA6E61C6E17B4003E3020 /* SPFormateur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPFormateur.m; sourceTree = "<group>"; };
-		252FA6E71C6E17B4003E3020 /* SPEtudiant+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPEtudiant+CoreDataProperties.h"; sourceTree = "<group>"; };
-		252FA6E81C6E17B4003E3020 /* SPEtudiant+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPEtudiant+CoreDataProperties.m"; sourceTree = "<group>"; };
-		252FA6E91C6E17B4003E3020 /* SPEtudiant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEtudiant.h; sourceTree = "<group>"; };
-		252FA6EA1C6E17B4003E3020 /* SPEtudiant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPEtudiant.m; sourceTree = "<group>"; };
-		252FA6EB1C6E17B4003E3020 /* SPIntervenant+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPIntervenant+CoreDataProperties.h"; sourceTree = "<group>"; };
-		252FA6EC1C6E17B4003E3020 /* SPIntervenant+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPIntervenant+CoreDataProperties.m"; sourceTree = "<group>"; };
-		252FA6ED1C6E17B4003E3020 /* SPIntervenant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPIntervenant.h; sourceTree = "<group>"; };
-		252FA6EE1C6E17B4003E3020 /* SPIntervenant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPIntervenant.m; sourceTree = "<group>"; };
 		252FC1CE1C5A5DB200617142 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		252FC1CF1C5A5DB200617142 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		253211421C6095C700C2E27A /* ModifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyViewController.h; sourceTree = "<group>"; };
@@ -114,6 +94,26 @@
 		2548E3701C64D55900D1BFB9 /* mapDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapDetailsViewController.m; sourceTree = "<group>"; };
 		255588081C5F6F180087D1E1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = savePersonne/fr.lproj/Main.strings; sourceTree = "<group>"; };
 		2555880C1C5FB00E0087D1E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
+		2568175C1C71EF4000E6F70E /* SPPersonne+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SPPersonne+CoreDataProperties.h"; path = "savePersonne/SPPersonne+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2568175D1C71EF4000E6F70E /* SPPersonne+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SPPersonne+CoreDataProperties.m"; path = "savePersonne/SPPersonne+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2568175E1C71EF4000E6F70E /* SPPersonne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPPersonne.h; path = savePersonne/SPPersonne.h; sourceTree = "<group>"; };
+		2568175F1C71EF4000E6F70E /* SPPersonne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPPersonne.m; path = savePersonne/SPPersonne.m; sourceTree = "<group>"; };
+		256817601C71EF4000E6F70E /* SPEtudiant+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SPEtudiant+CoreDataProperties.h"; path = "savePersonne/SPEtudiant+CoreDataProperties.h"; sourceTree = "<group>"; };
+		256817611C71EF4000E6F70E /* SPEtudiant+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SPEtudiant+CoreDataProperties.m"; path = "savePersonne/SPEtudiant+CoreDataProperties.m"; sourceTree = "<group>"; };
+		256817621C71EF4000E6F70E /* SPEtudiant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPEtudiant.h; path = savePersonne/SPEtudiant.h; sourceTree = "<group>"; };
+		256817631C71EF4000E6F70E /* SPEtudiant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPEtudiant.m; path = savePersonne/SPEtudiant.m; sourceTree = "<group>"; };
+		256817641C71EF4000E6F70E /* SPFormateur+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SPFormateur+CoreDataProperties.h"; path = "savePersonne/SPFormateur+CoreDataProperties.h"; sourceTree = "<group>"; };
+		256817651C71EF4000E6F70E /* SPFormateur+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SPFormateur+CoreDataProperties.m"; path = "savePersonne/SPFormateur+CoreDataProperties.m"; sourceTree = "<group>"; };
+		256817661C71EF4000E6F70E /* SPFormateur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPFormateur.h; path = savePersonne/SPFormateur.h; sourceTree = "<group>"; };
+		256817671C71EF4000E6F70E /* SPFormateur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPFormateur.m; path = savePersonne/SPFormateur.m; sourceTree = "<group>"; };
+		256817681C71EF4000E6F70E /* SPClasse+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SPClasse+CoreDataProperties.h"; path = "savePersonne/SPClasse+CoreDataProperties.h"; sourceTree = "<group>"; };
+		256817691C71EF4000E6F70E /* SPClasse+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SPClasse+CoreDataProperties.m"; path = "savePersonne/SPClasse+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2568176A1C71EF4000E6F70E /* SPClasse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPClasse.h; path = savePersonne/SPClasse.h; sourceTree = "<group>"; };
+		2568176B1C71EF4000E6F70E /* SPClasse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPClasse.m; path = savePersonne/SPClasse.m; sourceTree = "<group>"; };
+		2568176C1C71EF4000E6F70E /* SPIntervenant+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SPIntervenant+CoreDataProperties.h"; path = "savePersonne/SPIntervenant+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2568176D1C71EF4000E6F70E /* SPIntervenant+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SPIntervenant+CoreDataProperties.m"; path = "savePersonne/SPIntervenant+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2568176E1C71EF4000E6F70E /* SPIntervenant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPIntervenant.h; path = savePersonne/SPIntervenant.h; sourceTree = "<group>"; };
+		2568176F1C71EF4000E6F70E /* SPIntervenant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPIntervenant.m; path = savePersonne/SPIntervenant.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,26 +221,26 @@
 		252FA6FD1C6E18FC003E3020 /* CoreDataEntries */ = {
 			isa = PBXGroup;
 			children = (
-				252FA6DB1C6E17B4003E3020 /* SPPersonne+CoreDataProperties.h */,
-				252FA6DC1C6E17B4003E3020 /* SPPersonne+CoreDataProperties.m */,
-				252FA6DD1C6E17B4003E3020 /* SPPersonne.h */,
-				252FA6DE1C6E17B4003E3020 /* SPPersonne.m */,
-				252FA6DF1C6E17B4003E3020 /* SPClasse+CoreDataProperties.h */,
-				252FA6E01C6E17B4003E3020 /* SPClasse+CoreDataProperties.m */,
-				252FA6E11C6E17B4003E3020 /* SPClasse.h */,
-				252FA6E21C6E17B4003E3020 /* SPClasse.m */,
-				252FA6E31C6E17B4003E3020 /* SPFormateur+CoreDataProperties.h */,
-				252FA6E41C6E17B4003E3020 /* SPFormateur+CoreDataProperties.m */,
-				252FA6E51C6E17B4003E3020 /* SPFormateur.h */,
-				252FA6E61C6E17B4003E3020 /* SPFormateur.m */,
-				252FA6E71C6E17B4003E3020 /* SPEtudiant+CoreDataProperties.h */,
-				252FA6E81C6E17B4003E3020 /* SPEtudiant+CoreDataProperties.m */,
-				252FA6E91C6E17B4003E3020 /* SPEtudiant.h */,
-				252FA6EA1C6E17B4003E3020 /* SPEtudiant.m */,
-				252FA6EB1C6E17B4003E3020 /* SPIntervenant+CoreDataProperties.h */,
-				252FA6EC1C6E17B4003E3020 /* SPIntervenant+CoreDataProperties.m */,
-				252FA6ED1C6E17B4003E3020 /* SPIntervenant.h */,
-				252FA6EE1C6E17B4003E3020 /* SPIntervenant.m */,
+				2568175C1C71EF4000E6F70E /* SPPersonne+CoreDataProperties.h */,
+				2568175D1C71EF4000E6F70E /* SPPersonne+CoreDataProperties.m */,
+				2568175E1C71EF4000E6F70E /* SPPersonne.h */,
+				2568175F1C71EF4000E6F70E /* SPPersonne.m */,
+				256817601C71EF4000E6F70E /* SPEtudiant+CoreDataProperties.h */,
+				256817611C71EF4000E6F70E /* SPEtudiant+CoreDataProperties.m */,
+				256817621C71EF4000E6F70E /* SPEtudiant.h */,
+				256817631C71EF4000E6F70E /* SPEtudiant.m */,
+				256817641C71EF4000E6F70E /* SPFormateur+CoreDataProperties.h */,
+				256817651C71EF4000E6F70E /* SPFormateur+CoreDataProperties.m */,
+				256817661C71EF4000E6F70E /* SPFormateur.h */,
+				256817671C71EF4000E6F70E /* SPFormateur.m */,
+				256817681C71EF4000E6F70E /* SPClasse+CoreDataProperties.h */,
+				256817691C71EF4000E6F70E /* SPClasse+CoreDataProperties.m */,
+				2568176A1C71EF4000E6F70E /* SPClasse.h */,
+				2568176B1C71EF4000E6F70E /* SPClasse.m */,
+				2568176C1C71EF4000E6F70E /* SPIntervenant+CoreDataProperties.h */,
+				2568176D1C71EF4000E6F70E /* SPIntervenant+CoreDataProperties.m */,
+				2568176E1C71EF4000E6F70E /* SPIntervenant.h */,
+				2568176F1C71EF4000E6F70E /* SPIntervenant.m */,
 			);
 			name = CoreDataEntries;
 			path = ..;
@@ -379,35 +379,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				256817731C71EF4000E6F70E /* SPEtudiant.m in Sources */,
 				252EA3631C5904BC0016D5EC /* Etudiant.m in Sources */,
-				252FA6F01C6E17B4003E3020 /* SPPersonne.m in Sources */,
+				256817711C71EF4000E6F70E /* SPPersonne.m in Sources */,
 				2533533A1C63443900E88A5B /* WebViewController.m in Sources */,
 				252EB19F1C63685C002ED910 /* ShortCutsViewController.m in Sources */,
 				252EA34F1C5904710016D5EC /* ViewController.m in Sources */,
-				252FA6F61C6E17B4003E3020 /* SPEtudiant.m in Sources */,
 				252EA34C1C5904710016D5EC /* AppDelegate.m in Sources */,
-				252FA6F51C6E17B4003E3020 /* SPEtudiant+CoreDataProperties.m in Sources */,
 				253211441C6095C700C2E27A /* ModifyViewController.m in Sources */,
 				252FC1D01C5A5DB200617142 /* DetailViewController.m in Sources */,
 				2534DF961C5B99890046789F /* TableViewController.m in Sources */,
-				252FA6F21C6E17B4003E3020 /* SPClasse.m in Sources */,
 				252EA3661C5904D80016D5EC /* Formateur.m in Sources */,
+				256817721C71EF4000E6F70E /* SPEtudiant+CoreDataProperties.m in Sources */,
+				256817741C71EF4000E6F70E /* SPFormateur+CoreDataProperties.m in Sources */,
 				253211471C60DE9600C2E27A /* TableViewCellController.m in Sources */,
-				252FA6F31C6E17B4003E3020 /* SPFormateur+CoreDataProperties.m in Sources */,
 				25209CC11C60FC7800004328 /* CollectionViewCellController.m in Sources */,
 				252EA3691C5910490016D5EC /* Classe.m in Sources */,
-				252FA6F71C6E17B4003E3020 /* SPIntervenant+CoreDataProperties.m in Sources */,
 				252EA3491C5904710016D5EC /* main.m in Sources */,
+				256817781C71EF4000E6F70E /* SPIntervenant+CoreDataProperties.m in Sources */,
+				256817771C71EF4000E6F70E /* SPClasse.m in Sources */,
+				256817751C71EF4000E6F70E /* SPFormateur.m in Sources */,
 				25209CBE1C60FAA000004328 /* CollectionViewController.m in Sources */,
-				252FA6F41C6E17B4003E3020 /* SPFormateur.m in Sources */,
-				252FA6EF1C6E17B4003E3020 /* SPPersonne+CoreDataProperties.m in Sources */,
+				256817701C71EF4000E6F70E /* SPPersonne+CoreDataProperties.m in Sources */,
 				254145F21C5F595500FD6252 /* Intervenant.m in Sources */,
-				252FA6F11C6E17B4003E3020 /* SPClasse+CoreDataProperties.m in Sources */,
 				2548E36E1C64944C00D1BFB9 /* MapViewController.m in Sources */,
 				2548E3711C64D55900D1BFB9 /* mapDetailsViewController.m in Sources */,
 				252FA6DA1C6E15E1003E3020 /* Model.xcdatamodeld in Sources */,
 				252EA3601C5904AD0016D5EC /* Personne.m in Sources */,
-				252FA6F81C6E17B4003E3020 /* SPIntervenant.m in Sources */,
+				256817761C71EF4000E6F70E /* SPClasse+CoreDataProperties.m in Sources */,
+				256817791C71EF4000E6F70E /* SPIntervenant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

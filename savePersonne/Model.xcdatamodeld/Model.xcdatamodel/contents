@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15A284" minimumToolsVersion="Xcode 7.0">
     <entity name="SPClasse" representedClassName="SPClasse" syncable="YES">
-        <relationship name="newRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SPPersonne" syncable="YES"/>
+        <relationship name="personne" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SPPersonne" syncable="YES"/>
     </entity>
     <entity name="SPEtudiant" representedClassName="SPEtudiant" parentEntity="SPPersonne" syncable="YES"/>
     <entity name="SPFormateur" representedClassName="SPFormateur" parentEntity="SPPersonne" syncable="YES"/>
@@ -13,9 +13,9 @@
     </entity>
     <elements>
         <element name="SPClasse" positionX="-315" positionY="-72" width="128" height="58"/>
+        <element name="SPEtudiant" positionX="-99" positionY="72" width="128" height="45"/>
+        <element name="SPFormateur" positionX="-99" positionY="126" width="128" height="45"/>
+        <element name="SPIntervenant" positionX="-81" positionY="189" width="128" height="45"/>
         <element name="SPPersonne" positionX="-317" positionY="81" width="128" height="88"/>
-        <element name="SPEtudiant" positionX="-99" positionY="72" width="128" height="43"/>
-        <element name="SPFormateur" positionX="-99" positionY="126" width="128" height="43"/>
-        <element name="SPIntervenant" positionX="-81" positionY="189" width="128" height="43"/>
     </elements>
 </model>

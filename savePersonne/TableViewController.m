@@ -11,10 +11,12 @@
 #import "DetailViewController.h"
 #import "ModifyViewController.h"
 #import "TableViewCellController.h"
-#import "Personne.h"
-#import "Etudiant.h"
-#import "Formateur.h"
-#import "Intervenant.h"
+#import "SPPersonne.h"
+#import "SPEtudiant.h"
+#import "SPFormateur.h"
+#import "SPIntervenant.h"
+#import "AppDelegate.h"
+
 
 @interface TableViewController ()
 
@@ -27,10 +29,8 @@ UIActivityIndicatorView *activityView;
 
 NSIndexPath *tmpIndexPath;
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     [self slideRefresh];
 }
 
@@ -56,39 +56,48 @@ NSIndexPath *tmpIndexPath;
     
     [activityView startAnimating];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        [[Classe sharedCLassManager] loadUsersList];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [self.tableView reloadData];
-            [activityView stopAnimating];
-            
-            
-        });
-        
-    });
-    
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+//        [[Classe sharedCLassManager] loadUsersList];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            
+//            [self.tableView reloadData];
+//            [activityView stopAnimating];
+//            
+//            
+//        });
+//        
+//    });
+
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    self.listOfPerson = [appDelegate.maClasse.personne allObjects];
+    [activityView stopAnimating];
+    [self.tableView reloadData];
 }
 
 
 - (void)refreshMe{
     
     //affichage de la marguerite
-    [activityView startAnimating];
 
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        
-        [[Classe sharedCLassManager] loadUsersList];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [self.tableView reloadData];
-            [activityView stopAnimating];
-            
-        });
-        
-    });
+
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+//        
+//        [[Classe sharedCLassManager] loadUsersList];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            
+//            [self.tableView reloadData];
+//            [activityView stopAnimating];
+//            
+//        });
+//        
+//    });
+
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    self.listOfPerson = [appDelegate.maClasse.personne allObjects];
+
+    [self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }
 
@@ -101,18 +110,18 @@ NSIndexPath *tmpIndexPath;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [Classe sharedCLassManager].listOfUsers.count;
+    return self.listOfPerson.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    Personne *personne = [[Classe sharedCLassManager].listOfUsers objectAtIndex:indexPath.row];
+    SPPersonne *personne = [self.listOfPerson objectAtIndex:indexPath.row];
     UITableViewCell *cell;
     
     
     
-    if([personne isKindOfClass:[Etudiant class]]){
+    if([personne isKindOfClass:[SPEtudiant class]]){
         
         cell = [tableView dequeueReusableCellWithIdentifier:@"maCelluleCustom" forIndexPath:indexPath];
         ((TableViewCellController *)cell).cellLabel.text = [NSString stringWithFormat:@"%@ %@", personne.name, personne.firstName];
@@ -138,8 +147,8 @@ NSIndexPath *tmpIndexPath;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    Personne *personne = [[Classe sharedCLassManager].listOfUsers objectAtIndex:indexPath.row];
-    if([personne isKindOfClass:[Etudiant class]]){
+    SPPersonne *personne = [self.listOfPerson objectAtIndex:indexPath.row];
+    if([personne isKindOfClass:[SPEtudiant class]]){
         return 180;
     }else{
         return 44;
@@ -152,7 +161,7 @@ NSIndexPath *tmpIndexPath;
     if([segue.identifier isEqualToString:@"showDetailSegue"]){
         DetailViewController *detailVC = segue.destinationViewController;
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-        detailVC.personne = [[Classe sharedCLassManager].listOfUsers objectAtIndex:ip.row];
+        detailVC.personne = [self.listOfPerson objectAtIndex:ip.row];
         
     }else if([segue.identifier isEqualToString:@"modifySegue"]){
         ModifyViewController * mVC = segue.destinationViewController;
@@ -200,25 +209,26 @@ NSIndexPath *tmpIndexPath;
     
     // DELETE
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
-        
+       
         // threading
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             
-        [[Classe sharedCLassManager] removeUserAtIndex:indexPath.row];
-            
+            AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+            [appDelegate.maClasse removePersonneObject:[self.listOfPerson objectAtIndex:indexPath.row]];
+            [appDelegate.managedObjectContext deleteObject:[self.listOfPerson objectAtIndex:indexPath.row]];
+            [appDelegate saveContext];
+
             dispatch_async(dispatch_get_main_queue(), ^{
-                //blabla
+                
+                self.listOfPerson = [appDelegate.maClasse.personne allObjects];
+                [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             });
             
         });
         
         
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
     }];
-    
     deleteAction.backgroundColor = [UIColor redColor];
-    
     return @[deleteAction,editAction];
     
 }

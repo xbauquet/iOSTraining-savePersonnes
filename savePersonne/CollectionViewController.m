@@ -9,6 +9,8 @@
 #import "CollectionViewController.h"
 #import "Classe.h"
 #import "CollectionViewCellController.h"
+#import "AppDelegate.h"
+#import "SPPersonne.h"
 
 @interface CollectionViewController ()
 
@@ -32,7 +34,10 @@ static NSString * const reuseIdentifier = @"cell";
 
 
 - (void)viewWillAppear:(BOOL)animated{
-    [[Classe sharedCLassManager] loadUsersList];
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    self.listOfPerson = [appDelegate.maClasse.personne allObjects];
+
     [self.collectionView reloadData];
     
 }
@@ -61,12 +66,12 @@ static NSString * const reuseIdentifier = @"cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [[Classe sharedCLassManager].listOfUsers count];
+    return self.listOfPerson.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    Personne *personne = [[Classe sharedCLassManager].listOfUsers objectAtIndex:indexPath.row];
+    SPPersonne *personne = [self.listOfPerson objectAtIndex:indexPath.row];
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     ((CollectionViewCellController *)cell).cellLabel.text = [NSString stringWithFormat:@"%@ %@", personne.name, personne.firstName];

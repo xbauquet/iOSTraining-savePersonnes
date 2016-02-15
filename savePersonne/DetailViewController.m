@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "AppDelegate.h"
 
 @interface DetailViewController ()
 
@@ -17,15 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.classLabelRegistered setText:[self.personne getClass]];
-    [self.nameLabelRegistered setText:self.personne.name];
-    [self.firstNameLabelRegistered setText:self.personne.firstName];
+    self.classLabelRegistered.text = self.personne.getClass;
+    self.nameLabelRegistered.text = self.personne.name;
+    self.firstNameLabelRegistered.text = self.personne.firstName;
     
     //display image
     NSString *documentsDirectory =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",[NSString stringWithFormat:@"%@", self.personne.imageName]]];
     self.imageView.image = [UIImage imageWithContentsOfFile:filePath];
-
+    
      }
 
 - (void)didReceiveMemoryWarning {

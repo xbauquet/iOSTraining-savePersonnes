@@ -7,11 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "Formateur.h"
-#import "Etudiant.h"
-#import "Personne.h"
-#import "Intervenant.h"
-#import "Classe.h"
+#import "SPFormateur.h"
+#import "SPEtudiant.h"
+#import "SPPersonne.h"
+#import "SPIntervenant.h"
+#import "SPClasse+CoreDataProperties.h"
 #import "DetailViewController.h"
 #import "AppDelegate.h"
 
@@ -193,10 +193,11 @@
         
         // New method to use
         AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-        NSManagedObjectContext *context = [appDelegate managedObjectContext];
+
+        
         NSManagedObject *newPersonne;
         
-        newPersonne = [NSEntityDescription insertNewObjectForEntityForName:type inManagedObjectContext:context];
+        newPersonne = [NSEntityDescription insertNewObjectForEntityForName:type inManagedObjectContext:appDelegate.managedObjectContext];
         [newPersonne setValue:self.inputName.text forKey:@"name"];
         [newPersonne setValue:self.inputFirstName.text forKey:@"firstName"];
         
@@ -207,12 +208,13 @@
         NSData * imageData = UIImagePNGRepresentation(self.imageView.image);
         [imageData writeToFile:filePath atomically:YES];
         
-        [newPersonne setValue:[NSString stringWithFormat:@"%@.png", guid] forKey:@"name"];
-        NSError *error;
-        [context save:&error]; // save the context
+        [newPersonne setValue:[NSString stringWithFormat:@"%@.png", guid] forKey:@"imageName"];
         
-        [classe addNewRelationshipObject:(SPPersonne*)newPersonne];
+        [appDelegate.maClasse addPersonneObject:(SPPersonne *)newPersonne];
         
+        [appDelegate saveContext]; // save the context
+        
+        detailVC.personne = (SPPersonne*)newPersonne;
         
         [self annulerButton:nil];
         

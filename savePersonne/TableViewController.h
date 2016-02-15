@@ -11,5 +11,6 @@
 @interface TableViewController : UITableViewController
 
 @property NSIndexPath * rowIndex;
+@property NSArray * listOfPerson;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Personne.h"
+#import "SPPersonne.h"
 
 @interface DetailViewController : UIViewController
 
@@ -15,8 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabelRegistered;
 @property (weak, nonatomic) IBOutlet UILabel *firstNameLabelRegistered;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property Personne * personne;
-
+//@property Personne * personne;
+@property SPPersonne * personne;
 //- (IBAction)returnCloseDetailViewControler:(id)sender;
 
 @end

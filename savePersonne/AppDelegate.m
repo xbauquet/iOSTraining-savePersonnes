@@ -18,17 +18,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     NSManagedObjectContext *context = [self managedObjectContext];
     NSError * error;
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"classe"];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SPClasse"];
     NSArray *results = [context executeFetchRequest:request error:&error];
     if(results.count<1){
         NSManagedObject *newClasse;
         newClasse = [NSEntityDescription insertNewObjectForEntityForName:@"SPClasse" inManagedObjectContext:context];
-        SPClasse *classe = (SPClasse *)newClasse;
+        self.maClasse = (SPClasse *)newClasse;
         [self saveContext];
+    }else{
+        self.maClasse = (SPClasse *)results[0];
     }
+    
     
     return YES;
 }
@@ -87,7 +91,7 @@
     // Create the coordinator and store
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CoreDataApp.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"model.sqlite"];
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
