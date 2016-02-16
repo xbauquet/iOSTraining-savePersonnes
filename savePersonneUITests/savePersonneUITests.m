@@ -33,8 +33,23 @@
 }
 
 - (void)testExample {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.navigationBars[@"List"].buttons[@"Add"] tap];
+    
+    XCUIElement *lastNameTextField = app.textFields[@"Last Name"];
+    [lastNameTextField tap];
+    [lastNameTextField typeText:@"selon"];
+    
+    XCUIElement *firstNameTextField = app.textFields[@"First Name"];
+    [firstNameTextField tap];
+    [firstNameTextField typeText:@"selon"];
+    [[[[[[[[[[[[[[[[[app childrenMatchingType:XCUIElementTypeWindow] elementBoundByIndex:0] childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther] elementBoundByIndex:1] childrenMatchingType:XCUIElementTypeOther] elementBoundByIndex:1] childrenMatchingType:XCUIElementTypeSwitch] matchingIdentifier:@"0"] elementBoundByIndex:0] tap];
+    [app.navigationBars[@"Form"].buttons[@"Save"] tap];
+    [app.navigationBars[@"Display"].buttons[@"Form"] tap];
+    [app.navigationBars[@"Form"].buttons[@"List"] tap];
+    
 }
 
 @end

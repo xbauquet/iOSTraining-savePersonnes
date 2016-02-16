@@ -16,6 +16,7 @@
 #import "SPFormateur.h"
 #import "SPIntervenant.h"
 #import "AppDelegate.h"
+#import "SPGAITracker.h"
 
 
 @interface TableViewController ()
@@ -35,6 +36,8 @@ NSIndexPath *tmpIndexPath;
 }
 
 
+
+
 - (void)slideRefresh{
     // Crée le refresh quand on tire la liste vers le bas
     self.refreshControl = [[UIRefreshControl alloc]init];
@@ -49,26 +52,16 @@ NSIndexPath *tmpIndexPath;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    [SPGAITracker trackView:@"tableViewController"];
+    
+    
     activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     activityView.center =self.view.center;
     [self.view addSubview:activityView];
     activityView.color = [UIColor redColor];
     
     [activityView startAnimating];
-    
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-//        [[Classe sharedCLassManager] loadUsersList];
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            
-//            [self.tableView reloadData];
-//            [activityView stopAnimating];
-//            
-//            
-//        });
-//        
-//    });
-
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     self.listOfPerson = [appDelegate.maClasse.personne allObjects];
     [activityView stopAnimating];
@@ -77,23 +70,6 @@ NSIndexPath *tmpIndexPath;
 
 
 - (void)refreshMe{
-    
-    //affichage de la marguerite
-
-
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-//        
-//        [[Classe sharedCLassManager] loadUsersList];
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            
-//            [self.tableView reloadData];
-//            [activityView stopAnimating];
-//            
-//        });
-//        
-//    });
-
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     self.listOfPerson = [appDelegate.maClasse.personne allObjects];
 
@@ -178,22 +154,7 @@ NSIndexPath *tmpIndexPath;
     return YES;
 }
 
-
-
-// Override to support editing the table view.
-/*- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [[Classe sharedCLassManager] removeUserAtIndex:indexPath.row];
-        
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
-    }
-}*/
-
-
-
--(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     tmpIndexPath = indexPath;
     
     // EDIT
@@ -232,23 +193,5 @@ NSIndexPath *tmpIndexPath;
     return @[deleteAction,editAction];
     
 }
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- 
- 
-}
-*/
-
-
-/*// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}*/
-
-
 
 @end

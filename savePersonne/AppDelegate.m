@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+#import <Google/Analytics.h>
 
 @interface AppDelegate ()
 
@@ -18,6 +20,24 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // CRASHLYTICS
+    [Fabric with:@[[Crashlytics class]]];
+    
+    
+    //GOOGLE ANALYTICS
+    // Configure tracker from GoogleService-Info.plist.
+    NSError *configureError;
+    [[GGLContext sharedInstance] configureWithError:&configureError];
+    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+    
+    // Optional: configure GAI options.
+    GAI *gai = [GAI sharedInstance];
+    gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
+    gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release
+
+    
+    
     
     NSManagedObjectContext *context = [self managedObjectContext];
     NSError * error;
@@ -32,8 +52,6 @@
     }else{
         self.maClasse = (SPClasse *)results[0];
     }
-    
-    
     return YES;
 }
 

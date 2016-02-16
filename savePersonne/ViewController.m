@@ -14,6 +14,9 @@
 #import "SPClasse+CoreDataProperties.h"
 #import "DetailViewController.h"
 #import "AppDelegate.h"
+#import "SPImageHelper.h"
+#import "SPGAITracker.h"
+
 
 @interface ViewController () <UIImagePickerControllerDelegate>
 
@@ -33,9 +36,14 @@
     [super viewDidLoad];
     [self annulerButton:nil];
     [self.errorLabel setText:@""];
+    
+    
 }
 
-
+- (void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    [SPGAITracker trackView:@"viewController"];
+}
 
 
 /*
@@ -110,12 +118,12 @@
     return YES;
 }
 
-- (IBAction)touchOutside:(id)sender {
-    self.inputName.selected = NO;
-    self.inputFirstName.selected = NO;
-    [self.inputName resignFirstResponder];
-    [self.inputFirstName resignFirstResponder];
-}
+//- (IBAction)touchOutside:(id)sender {
+//    self.inputName.selected = NO;
+//    self.inputFirstName.selected = NO;
+//    [self.inputName resignFirstResponder];
+//    [self.inputFirstName resignFirstResponder];
+//}
 
 
 
@@ -135,59 +143,12 @@
         NSString * type;
         if(self.switchFormateur.on){ // FORMATEUR
             type = @"SPFormateur";
-//            Formateur *newFormateur = [[Formateur alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[[Classe sharedCLassManager] saveImage:self.imageView.image]];
-//            
-//            // threading
-//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-//                
-//                [[Classe sharedCLassManager] addUser:newFormateur];
-//                
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    //blabla
-//                });
-//                
-//            });
-//            
-//            
-//            detailVC.personne = newFormateur;
             
         }else if(self.switchEtudiant.on){ // ETUDIANT
             type = @"SPEtudiant";
-//            Etudiant *newEtudiant = [[Etudiant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[[Classe sharedCLassManager] saveImage:self.imageView.image]];
-//            
-//            // threading
-//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-//                
-//                [[Classe sharedCLassManager] addUser:newEtudiant];
-//                
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    //blabla
-//                });
-//                
-//            });
-//            
-//
-//            detailVC.personne = newEtudiant;
             
         }else if(self.switchIntervenant.on){ // INTERVENANT
             type = @"SPIntervenant";
-//            Intervenant *newIntervenant = [[Intervenant alloc] initWithName:[self.inputName text] lastName:[self.inputFirstName text] imageName:[[Classe sharedCLassManager] saveImage:self.imageView.image]];
-//            
-//            
-//            // threading
-//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-//                
-//                [[Classe sharedCLassManager] addUser:newIntervenant];
-//                
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    //blabla
-//                });
-//                
-//            });
-//            
-//            detailVC.personne = newIntervenant;
-//            
-//            
         }
         
         
@@ -201,12 +162,7 @@
         [newPersonne setValue:self.inputName.text forKey:@"name"];
         [newPersonne setValue:self.inputFirstName.text forKey:@"firstName"];
         
-        //save image
-        NSString *documentsDirectory =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-        NSString *guid = [[NSUUID new]UUIDString];
-        NSString *filePath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", guid]];
-        NSData * imageData = UIImagePNGRepresentation(self.imageView.image);
-        [imageData writeToFile:filePath atomically:YES];
+        NSString * guid = [SPImageHelper saveImage:self.imageView.image];
         
         [newPersonne setValue:[NSString stringWithFormat:@"%@.png", guid] forKey:@"imageName"];
         

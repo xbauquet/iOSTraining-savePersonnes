@@ -11,6 +11,7 @@
 #import "CollectionViewCellController.h"
 #import "AppDelegate.h"
 #import "SPPersonne.h"
+#import "SPGAITracker.h"
 
 @interface CollectionViewController ()
 
@@ -22,6 +23,10 @@ static NSString * const reuseIdentifier = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // GOOGLE ANALYTICS
+    [SPGAITracker trackView:@"detailViewController"];
+    
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;

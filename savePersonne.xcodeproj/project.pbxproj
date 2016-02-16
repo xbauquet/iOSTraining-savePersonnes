@@ -25,6 +25,8 @@
 		252FC1D01C5A5DB200617142 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 252FC1CF1C5A5DB200617142 /* DetailViewController.m */; };
 		253211441C6095C700C2E27A /* ModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 253211431C6095C700C2E27A /* ModifyViewController.m */; };
 		253211471C60DE9600C2E27A /* TableViewCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 253211461C60DE9600C2E27A /* TableViewCellController.m */; };
+		253316061C736F0F000C5B75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 253316051C736F0F000C5B75 /* GoogleService-Info.plist */; };
+		253316091C737064000C5B75 /* SPGAITracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 253316081C737064000C5B75 /* SPGAITracker.m */; };
 		2533533A1C63443900E88A5B /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 253353391C63443900E88A5B /* WebViewController.m */; };
 		2534DF961C5B99890046789F /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2534DF951C5B99890046789F /* TableViewController.m */; };
 		254145F21C5F595500FD6252 /* Intervenant.m in Sources */ = {isa = PBXBuildFile; fileRef = 254145F11C5F595500FD6252 /* Intervenant.m */; };
@@ -46,6 +48,7 @@
 		25E7AD451C731819001ABB9B /* savePersonneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E7AD441C731819001ABB9B /* savePersonneUITests.m */; };
 		25E7AD531C731823001ABB9B /* savePersonneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E7AD521C731823001ABB9B /* savePersonneTests.m */; };
 		25E7AD5C1C731D11001ABB9B /* SPImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E7AD5B1C731D11001ABB9B /* SPImageHelper.m */; };
+		3A9678766CBA253061CE116F /* Pods_savePersonne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 129F8722BE66E1324E748255 /* Pods_savePersonne.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		129F8722BE66E1324E748255 /* Pods_savePersonne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_savePersonne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25209CBC1C60FAA000004328 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		25209CBD1C60FAA000004328 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		25209CBF1C60FC7800004328 /* CollectionViewCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCellController.h; sourceTree = "<group>"; };
@@ -98,6 +102,9 @@
 		253211431C6095C700C2E27A /* ModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyViewController.m; sourceTree = "<group>"; };
 		253211451C60DE9600C2E27A /* TableViewCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellController.h; sourceTree = "<group>"; };
 		253211461C60DE9600C2E27A /* TableViewCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellController.m; sourceTree = "<group>"; };
+		253316051C736F0F000C5B75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		253316071C737064000C5B75 /* SPGAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGAITracker.h; sourceTree = "<group>"; };
+		253316081C737064000C5B75 /* SPGAITracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGAITracker.m; sourceTree = "<group>"; };
 		253353381C63443900E88A5B /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		253353391C63443900E88A5B /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		2534DF941C5B99890046789F /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -142,6 +149,8 @@
 		25E7AD541C731823001ABB9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25E7AD5A1C731D11001ABB9B /* SPImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPImageHelper.h; sourceTree = "<group>"; };
 		25E7AD5B1C731D11001ABB9B /* SPImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPImageHelper.m; sourceTree = "<group>"; };
+		76465D9A61EC9FE486B70051 /* Pods-savePersonne.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-savePersonne.release.xcconfig"; path = "Pods/Target Support Files/Pods-savePersonne/Pods-savePersonne.release.xcconfig"; sourceTree = "<group>"; };
+		AC1D2CA3E340EBD651A19B64 /* Pods-savePersonne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-savePersonne.debug.xcconfig"; path = "Pods/Target Support Files/Pods-savePersonne/Pods-savePersonne.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9678766CBA253061CE116F /* Pods_savePersonne.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +186,8 @@
 				25E7AD431C731819001ABB9B /* savePersonneUITests */,
 				25E7AD511C731823001ABB9B /* savePersonneTests */,
 				252EA3451C5904700016D5EC /* Products */,
+				EFB98D75C73941E3039BB57F /* Pods */,
+				564B00A3F0AC5ABE68C01BD8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,6 +217,7 @@
 				252EA3531C5904710016D5EC /* Assets.xcassets */,
 				252EA3551C5904710016D5EC /* LaunchScreen.storyboard */,
 				252EA3581C5904710016D5EC /* Info.plist */,
+				253316051C736F0F000C5B75 /* GoogleService-Info.plist */,
 				252EA3471C5904710016D5EC /* Supporting Files */,
 			);
 			path = savePersonne;
@@ -365,8 +378,27 @@
 			children = (
 				25E7AD5A1C731D11001ABB9B /* SPImageHelper.h */,
 				25E7AD5B1C731D11001ABB9B /* SPImageHelper.m */,
+				253316071C737064000C5B75 /* SPGAITracker.h */,
+				253316081C737064000C5B75 /* SPGAITracker.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		564B00A3F0AC5ABE68C01BD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				129F8722BE66E1324E748255 /* Pods_savePersonne.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFB98D75C73941E3039BB57F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC1D2CA3E340EBD651A19B64 /* Pods-savePersonne.debug.xcconfig */,
+				76465D9A61EC9FE486B70051 /* Pods-savePersonne.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,9 +408,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 252EA35B1C5904710016D5EC /* Build configuration list for PBXNativeTarget "savePersonne" */;
 			buildPhases = (
+				BDECA8CB15C4B448A7263FBA /* Check Pods Manifest.lock */,
 				252EA3401C5904700016D5EC /* Sources */,
 				252EA3411C5904700016D5EC /* Frameworks */,
 				252EA3421C5904700016D5EC /* Resources */,
+				E292FD66717910A1189C28ED /* Embed Pods Frameworks */,
+				97DD9F2B82D4BAC8FF4430ED /* Copy Pods Resources */,
+				253316041C7361B7000C5B75 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -475,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				254145F71C5F611500FD6252 /* Main.storyboard in Resources */,
+				253316061C736F0F000C5B75 /* GoogleService-Info.plist in Resources */,
 				254145FC1C5F68E900FD6252 /* Localizable.strings in Resources */,
 				252EA3571C5904710016D5EC /* LaunchScreen.storyboard in Resources */,
 				252EA3541C5904710016D5EC /* Assets.xcassets in Resources */,
@@ -499,6 +536,67 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		253316041C7361B7000C5B75 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" def3795291b8137332641fdc50bd9ee0b3f6fa37 84e99c68bc542879bfb8b335bec454e5a9b82ad1de0951ab7b2604348c01f176";
+		};
+		97DD9F2B82D4BAC8FF4430ED /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-savePersonne/Pods-savePersonne-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDECA8CB15C4B448A7263FBA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E292FD66717910A1189C28ED /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-savePersonne/Pods-savePersonne-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		252EA3401C5904700016D5EC /* Sources */ = {
@@ -535,6 +633,7 @@
 				252EA3601C5904AD0016D5EC /* Personne.m in Sources */,
 				256817761C71EF4000E6F70E /* SPClasse+CoreDataProperties.m in Sources */,
 				256817791C71EF4000E6F70E /* SPIntervenant.m in Sources */,
+				253316091C737064000C5B75 /* SPGAITracker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,10 +792,12 @@
 		};
 		252EA35C1C5904710016D5EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC1D2CA3E340EBD651A19B64 /* Pods-savePersonne.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = savePersonne/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xavier.savePersonne;
@@ -707,10 +808,12 @@
 		};
 		252EA35D1C5904710016D5EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76465D9A61EC9FE486B70051 /* Pods-savePersonne.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = savePersonne/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xavier.savePersonne;

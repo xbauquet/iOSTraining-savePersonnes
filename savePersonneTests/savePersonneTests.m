@@ -9,6 +9,9 @@
 #import <XCTest/XCTest.h>
 #import "SPImageHelper.h"
 #import "AppDelegate.h"
+#import "Classe.h"
+#import "Personne.h"
+
 
 @interface savePersonneTests : XCTestCase
 
@@ -76,10 +79,25 @@
     XCTAssertTrue(initialPersons.count == personnes.count);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
+- (void)testAddUser {
+    
+    Classe *maClasse = [Classe new];
+    Personne * personne = [Personne new];
+    
     [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+        [maClasse addUser:personne];
+        [maClasse loadUsersList];
+        
+    }];
+}
+
+
+- (void)testLoadUsersList {
+    
+    Classe *maClasse = [Classe new];
+    [self measureBlock:^{
+        [maClasse loadUsersList];
+        
     }];
 }
 

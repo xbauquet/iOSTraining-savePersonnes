@@ -8,6 +8,8 @@
 
 #import "DetailViewController.h"
 #import "AppDelegate.h"
+#import "SPImageHelper.h"
+#import "SPGAITracker.h"
 
 @interface DetailViewController ()
 
@@ -17,38 +19,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.classLabelRegistered.text = self.personne.getClass;
     self.nameLabelRegistered.text = self.personne.name;
     self.firstNameLabelRegistered.text = self.personne.firstName;
-    
-    //display image
-    NSString *documentsDirectory =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",[NSString stringWithFormat:@"%@", self.personne.imageName]]];
-    self.imageView.image = [UIImage imageWithContentsOfFile:filePath];
-    
-     }
+    self.imageView.image = [SPImageHelper loadImage:self.personne.imageName];
+}
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    [SPGAITracker trackView:@"detailViewController"];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-/*
- * Ferme la vu.
- *
-- (IBAction)returnCloseDetailViewControler:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}*/
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
